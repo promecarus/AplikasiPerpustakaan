@@ -30,6 +30,7 @@ Partial Class FormTambahKoleksi
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Name = "FormTambahKoleksi"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormTambahKoleksi"
         Me.ResumeLayout(False)
 
