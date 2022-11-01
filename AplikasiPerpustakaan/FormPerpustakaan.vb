@@ -10,7 +10,11 @@
     End Sub
 
     Private Sub ToolStripButtonMinus_Click(sender As Object, e As EventArgs) Handles ToolStripButtonMinus.Click
-        FormHapusKoleksi.Show()
-        'Me.Hide()
+        If String.IsNullOrEmpty(ListBoxKoleksi.SelectedItem) Then
+            MessageBox.Show("Pilih koleksi yang ingin dihapus")
+        Else
+            FormHapusKoleksi.LabelKonfirmasi.Text += ListBoxKoleksi.SelectedItem.ToString + "?"
+            FormHapusKoleksi.Show()
+        End If
     End Sub
 End Class
