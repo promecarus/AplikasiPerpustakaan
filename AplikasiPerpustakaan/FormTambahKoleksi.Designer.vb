@@ -31,7 +31,7 @@ Partial Class FormTambahKoleksi
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Name = "FormTambahKoleksi"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormTambahKoleksi"
+        Me.Text = "TambahKoleksi"
         Me.ResumeLayout(False)
 
     End Sub
