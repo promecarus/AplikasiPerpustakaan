@@ -25,34 +25,34 @@ Partial Class FormTambahKoleksi
         Me.LabelTambahKoleksi = New System.Windows.Forms.Label()
         Me.PanelImage = New System.Windows.Forms.Panel()
         Me.LabelNamaKoleksi = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxInputNamaKoleksi = New System.Windows.Forms.TextBox()
         Me.LabelJenisKoleksi = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxInputJenisKoleksi = New System.Windows.Forms.ComboBox()
         Me.LabelDeskripsi = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxInputDeskripsi = New System.Windows.Forms.RichTextBox()
         Me.LabelPenerbit = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBoxInputPenerbit = New System.Windows.Forms.TextBox()
         Me.LabelTahunTerbit = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBoxInputTahunTerbit = New System.Windows.Forms.TextBox()
         Me.LabelLokasiRak = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBoxInputLokasiRak = New System.Windows.Forms.TextBox()
         Me.LabelTanggalMasukKoleksi = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePickerInputTanggalMasukKoleksi = New System.Windows.Forms.DateTimePicker()
         Me.LabelStock = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBoxInputStock = New System.Windows.Forms.TextBox()
         Me.LabelBahasa = New System.Windows.Forms.Label()
-        Me.GroupBoxBahasa = New System.Windows.Forms.GroupBox()
+        Me.GroupBoxInputBahasa = New System.Windows.Forms.GroupBox()
         Me.RadioButtonBahasaInggris = New System.Windows.Forms.RadioButton()
         Me.RadioButtonBahasaIndonesia = New System.Windows.Forms.RadioButton()
         Me.LabelKategori = New System.Windows.Forms.Label()
-        Me.GroupBoxKategori = New System.Windows.Forms.GroupBox()
+        Me.GroupBoxInputKategori = New System.Windows.Forms.GroupBox()
+        Me.CheckBoxBudaya = New System.Windows.Forms.CheckBox()
+        Me.CheckBoxTeknologi = New System.Windows.Forms.CheckBox()
         Me.CheckBoxSosial = New System.Windows.Forms.CheckBox()
         Me.CheckBoxSains = New System.Windows.Forms.CheckBox()
-        Me.CheckBoxTeknologi = New System.Windows.Forms.CheckBox()
-        Me.CheckBoxBudaya = New System.Windows.Forms.CheckBox()
         Me.ButtonTambahKoleksi = New System.Windows.Forms.Button()
-        Me.GroupBoxBahasa.SuspendLayout()
-        Me.GroupBoxKategori.SuspendLayout()
+        Me.GroupBoxInputBahasa.SuspendLayout()
+        Me.GroupBoxInputKategori.SuspendLayout()
         Me.SuspendLayout()
         '
         'LabelTambahKoleksi
@@ -81,12 +81,12 @@ Partial Class FormTambahKoleksi
         Me.LabelNamaKoleksi.TabIndex = 2
         Me.LabelNamaKoleksi.Text = "Nama Koleksi"
         '
-        'TextBox1
+        'TextBoxInputNamaKoleksi
         '
-        Me.TextBox1.Location = New System.Drawing.Point(400, 60)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(200, 27)
-        Me.TextBox1.TabIndex = 3
+        Me.TextBoxInputNamaKoleksi.Location = New System.Drawing.Point(400, 60)
+        Me.TextBoxInputNamaKoleksi.Name = "TextBoxInputNamaKoleksi"
+        Me.TextBoxInputNamaKoleksi.Size = New System.Drawing.Size(200, 27)
+        Me.TextBoxInputNamaKoleksi.TabIndex = 1
         '
         'LabelJenisKoleksi
         '
@@ -97,13 +97,13 @@ Partial Class FormTambahKoleksi
         Me.LabelJenisKoleksi.TabIndex = 2
         Me.LabelJenisKoleksi.Text = "Jenis Koleksi"
         '
-        'ComboBox1
+        'ComboBoxInputJenisKoleksi
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(400, 100)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(200, 28)
-        Me.ComboBox1.TabIndex = 4
+        Me.ComboBoxInputJenisKoleksi.FormattingEnabled = True
+        Me.ComboBoxInputJenisKoleksi.Location = New System.Drawing.Point(400, 100)
+        Me.ComboBoxInputJenisKoleksi.Name = "ComboBoxInputJenisKoleksi"
+        Me.ComboBoxInputJenisKoleksi.Size = New System.Drawing.Size(200, 28)
+        Me.ComboBoxInputJenisKoleksi.TabIndex = 2
         '
         'LabelDeskripsi
         '
@@ -114,13 +114,13 @@ Partial Class FormTambahKoleksi
         Me.LabelDeskripsi.TabIndex = 2
         Me.LabelDeskripsi.Text = "Deskripsi"
         '
-        'RichTextBox1
+        'RichTextBoxInputDeskripsi
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(400, 140)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(200, 120)
-        Me.RichTextBox1.TabIndex = 5
-        Me.RichTextBox1.Text = ""
+        Me.RichTextBoxInputDeskripsi.Location = New System.Drawing.Point(400, 140)
+        Me.RichTextBoxInputDeskripsi.Name = "RichTextBoxInputDeskripsi"
+        Me.RichTextBoxInputDeskripsi.Size = New System.Drawing.Size(200, 120)
+        Me.RichTextBoxInputDeskripsi.TabIndex = 3
+        Me.RichTextBoxInputDeskripsi.Text = ""
         '
         'LabelPenerbit
         '
@@ -131,12 +131,12 @@ Partial Class FormTambahKoleksi
         Me.LabelPenerbit.TabIndex = 2
         Me.LabelPenerbit.Text = "Penerbit"
         '
-        'TextBox2
+        'TextBoxInputPenerbit
         '
-        Me.TextBox2.Location = New System.Drawing.Point(400, 280)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(200, 27)
-        Me.TextBox2.TabIndex = 3
+        Me.TextBoxInputPenerbit.Location = New System.Drawing.Point(400, 280)
+        Me.TextBoxInputPenerbit.Name = "TextBoxInputPenerbit"
+        Me.TextBoxInputPenerbit.Size = New System.Drawing.Size(200, 27)
+        Me.TextBoxInputPenerbit.TabIndex = 4
         '
         'LabelTahunTerbit
         '
@@ -147,12 +147,12 @@ Partial Class FormTambahKoleksi
         Me.LabelTahunTerbit.TabIndex = 2
         Me.LabelTahunTerbit.Text = "Tahun Terbit"
         '
-        'TextBox3
+        'TextBoxInputTahunTerbit
         '
-        Me.TextBox3.Location = New System.Drawing.Point(400, 320)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(200, 27)
-        Me.TextBox3.TabIndex = 3
+        Me.TextBoxInputTahunTerbit.Location = New System.Drawing.Point(400, 320)
+        Me.TextBoxInputTahunTerbit.Name = "TextBoxInputTahunTerbit"
+        Me.TextBoxInputTahunTerbit.Size = New System.Drawing.Size(200, 27)
+        Me.TextBoxInputTahunTerbit.TabIndex = 5
         '
         'LabelLokasiRak
         '
@@ -163,12 +163,12 @@ Partial Class FormTambahKoleksi
         Me.LabelLokasiRak.TabIndex = 2
         Me.LabelLokasiRak.Text = "Lokasi Rak"
         '
-        'TextBox4
+        'TextBoxInputLokasiRak
         '
-        Me.TextBox4.Location = New System.Drawing.Point(400, 360)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(200, 27)
-        Me.TextBox4.TabIndex = 3
+        Me.TextBoxInputLokasiRak.Location = New System.Drawing.Point(400, 360)
+        Me.TextBoxInputLokasiRak.Name = "TextBoxInputLokasiRak"
+        Me.TextBoxInputLokasiRak.Size = New System.Drawing.Size(200, 27)
+        Me.TextBoxInputLokasiRak.TabIndex = 6
         '
         'LabelTanggalMasukKoleksi
         '
@@ -179,12 +179,12 @@ Partial Class FormTambahKoleksi
         Me.LabelTanggalMasukKoleksi.TabIndex = 2
         Me.LabelTanggalMasukKoleksi.Text = "Tanggal Masuk Koleksi"
         '
-        'DateTimePicker1
+        'DateTimePickerInputTanggalMasukKoleksi
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(400, 400)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 27)
-        Me.DateTimePicker1.TabIndex = 6
+        Me.DateTimePickerInputTanggalMasukKoleksi.Location = New System.Drawing.Point(400, 400)
+        Me.DateTimePickerInputTanggalMasukKoleksi.Name = "DateTimePickerInputTanggalMasukKoleksi"
+        Me.DateTimePickerInputTanggalMasukKoleksi.Size = New System.Drawing.Size(200, 27)
+        Me.DateTimePickerInputTanggalMasukKoleksi.TabIndex = 7
         '
         'LabelStock
         '
@@ -195,12 +195,12 @@ Partial Class FormTambahKoleksi
         Me.LabelStock.TabIndex = 2
         Me.LabelStock.Text = "Stock"
         '
-        'TextBox5
+        'TextBoxInputStock
         '
-        Me.TextBox5.Location = New System.Drawing.Point(400, 440)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(200, 27)
-        Me.TextBox5.TabIndex = 3
+        Me.TextBoxInputStock.Location = New System.Drawing.Point(400, 440)
+        Me.TextBoxInputStock.Name = "TextBoxInputStock"
+        Me.TextBoxInputStock.Size = New System.Drawing.Size(200, 27)
+        Me.TextBoxInputStock.TabIndex = 8
         '
         'LabelBahasa
         '
@@ -211,16 +211,16 @@ Partial Class FormTambahKoleksi
         Me.LabelBahasa.TabIndex = 2
         Me.LabelBahasa.Text = "Bahasa"
         '
-        'GroupBoxBahasa
+        'GroupBoxInputBahasa
         '
-        Me.GroupBoxBahasa.Controls.Add(Me.RadioButtonBahasaInggris)
-        Me.GroupBoxBahasa.Controls.Add(Me.RadioButtonBahasaIndonesia)
-        Me.GroupBoxBahasa.Location = New System.Drawing.Point(400, 480)
-        Me.GroupBoxBahasa.Name = "GroupBoxBahasa"
-        Me.GroupBoxBahasa.Size = New System.Drawing.Size(200, 110)
-        Me.GroupBoxBahasa.TabIndex = 7
-        Me.GroupBoxBahasa.TabStop = False
-        Me.GroupBoxBahasa.Text = "Bahasa"
+        Me.GroupBoxInputBahasa.Controls.Add(Me.RadioButtonBahasaInggris)
+        Me.GroupBoxInputBahasa.Controls.Add(Me.RadioButtonBahasaIndonesia)
+        Me.GroupBoxInputBahasa.Location = New System.Drawing.Point(400, 480)
+        Me.GroupBoxInputBahasa.Name = "GroupBoxInputBahasa"
+        Me.GroupBoxInputBahasa.Size = New System.Drawing.Size(200, 110)
+        Me.GroupBoxInputBahasa.TabIndex = 9
+        Me.GroupBoxInputBahasa.TabStop = False
+        Me.GroupBoxInputBahasa.Text = "Bahasa"
         '
         'RadioButtonBahasaInggris
         '
@@ -228,7 +228,7 @@ Partial Class FormTambahKoleksi
         Me.RadioButtonBahasaInggris.Location = New System.Drawing.Point(20, 66)
         Me.RadioButtonBahasaInggris.Name = "RadioButtonBahasaInggris"
         Me.RadioButtonBahasaInggris.Size = New System.Drawing.Size(126, 24)
-        Me.RadioButtonBahasaInggris.TabIndex = 0
+        Me.RadioButtonBahasaInggris.TabIndex = 1
         Me.RadioButtonBahasaInggris.TabStop = True
         Me.RadioButtonBahasaInggris.Text = "Bahasa Inggris"
         Me.RadioButtonBahasaInggris.UseVisualStyleBackColor = True
@@ -253,18 +253,38 @@ Partial Class FormTambahKoleksi
         Me.LabelKategori.TabIndex = 2
         Me.LabelKategori.Text = "Kategori"
         '
-        'GroupBoxKategori
+        'GroupBoxInputKategori
         '
-        Me.GroupBoxKategori.Controls.Add(Me.CheckBoxBudaya)
-        Me.GroupBoxKategori.Controls.Add(Me.CheckBoxTeknologi)
-        Me.GroupBoxKategori.Controls.Add(Me.CheckBoxSosial)
-        Me.GroupBoxKategori.Controls.Add(Me.CheckBoxSains)
-        Me.GroupBoxKategori.Location = New System.Drawing.Point(400, 600)
-        Me.GroupBoxKategori.Name = "GroupBoxKategori"
-        Me.GroupBoxKategori.Size = New System.Drawing.Size(200, 190)
-        Me.GroupBoxKategori.TabIndex = 7
-        Me.GroupBoxKategori.TabStop = False
-        Me.GroupBoxKategori.Text = "Kategori"
+        Me.GroupBoxInputKategori.Controls.Add(Me.CheckBoxBudaya)
+        Me.GroupBoxInputKategori.Controls.Add(Me.CheckBoxTeknologi)
+        Me.GroupBoxInputKategori.Controls.Add(Me.CheckBoxSosial)
+        Me.GroupBoxInputKategori.Controls.Add(Me.CheckBoxSains)
+        Me.GroupBoxInputKategori.Location = New System.Drawing.Point(400, 600)
+        Me.GroupBoxInputKategori.Name = "GroupBoxInputKategori"
+        Me.GroupBoxInputKategori.Size = New System.Drawing.Size(200, 190)
+        Me.GroupBoxInputKategori.TabIndex = 12
+        Me.GroupBoxInputKategori.TabStop = False
+        Me.GroupBoxInputKategori.Text = "Kategori"
+        '
+        'CheckBoxBudaya
+        '
+        Me.CheckBoxBudaya.AutoSize = True
+        Me.CheckBoxBudaya.Location = New System.Drawing.Point(20, 146)
+        Me.CheckBoxBudaya.Name = "CheckBoxBudaya"
+        Me.CheckBoxBudaya.Size = New System.Drawing.Size(80, 24)
+        Me.CheckBoxBudaya.TabIndex = 16
+        Me.CheckBoxBudaya.Text = "Budaya"
+        Me.CheckBoxBudaya.UseVisualStyleBackColor = True
+        '
+        'CheckBoxTeknologi
+        '
+        Me.CheckBoxTeknologi.AutoSize = True
+        Me.CheckBoxTeknologi.Location = New System.Drawing.Point(20, 106)
+        Me.CheckBoxTeknologi.Name = "CheckBoxTeknologi"
+        Me.CheckBoxTeknologi.Size = New System.Drawing.Size(96, 24)
+        Me.CheckBoxTeknologi.TabIndex = 15
+        Me.CheckBoxTeknologi.Text = "Teknologi"
+        Me.CheckBoxTeknologi.UseVisualStyleBackColor = True
         '
         'CheckBoxSosial
         '
@@ -272,7 +292,7 @@ Partial Class FormTambahKoleksi
         Me.CheckBoxSosial.Location = New System.Drawing.Point(20, 66)
         Me.CheckBoxSosial.Name = "CheckBoxSosial"
         Me.CheckBoxSosial.Size = New System.Drawing.Size(70, 24)
-        Me.CheckBoxSosial.TabIndex = 0
+        Me.CheckBoxSosial.TabIndex = 14
         Me.CheckBoxSosial.Text = "Sosial"
         Me.CheckBoxSosial.UseVisualStyleBackColor = True
         '
@@ -282,29 +302,9 @@ Partial Class FormTambahKoleksi
         Me.CheckBoxSains.Location = New System.Drawing.Point(20, 26)
         Me.CheckBoxSains.Name = "CheckBoxSains"
         Me.CheckBoxSains.Size = New System.Drawing.Size(65, 24)
-        Me.CheckBoxSains.TabIndex = 0
+        Me.CheckBoxSains.TabIndex = 13
         Me.CheckBoxSains.Text = "Sains"
         Me.CheckBoxSains.UseVisualStyleBackColor = True
-        '
-        'CheckBoxTeknologi
-        '
-        Me.CheckBoxTeknologi.AutoSize = True
-        Me.CheckBoxTeknologi.Location = New System.Drawing.Point(20, 106)
-        Me.CheckBoxTeknologi.Name = "CheckBoxTeknologi"
-        Me.CheckBoxTeknologi.Size = New System.Drawing.Size(96, 24)
-        Me.CheckBoxTeknologi.TabIndex = 0
-        Me.CheckBoxTeknologi.Text = "Teknologi"
-        Me.CheckBoxTeknologi.UseVisualStyleBackColor = True
-        '
-        'CheckBoxBudaya
-        '
-        Me.CheckBoxBudaya.AutoSize = True
-        Me.CheckBoxBudaya.Location = New System.Drawing.Point(20, 146)
-        Me.CheckBoxBudaya.Name = "CheckBoxBudaya"
-        Me.CheckBoxBudaya.Size = New System.Drawing.Size(80, 24)
-        Me.CheckBoxBudaya.TabIndex = 0
-        Me.CheckBoxBudaya.Text = "Budaya"
-        Me.CheckBoxBudaya.UseVisualStyleBackColor = True
         '
         'ButtonTambahKoleksi
         '
@@ -312,7 +312,7 @@ Partial Class FormTambahKoleksi
         Me.ButtonTambahKoleksi.Location = New System.Drawing.Point(0, 808)
         Me.ButtonTambahKoleksi.Name = "ButtonTambahKoleksi"
         Me.ButtonTambahKoleksi.Size = New System.Drawing.Size(620, 29)
-        Me.ButtonTambahKoleksi.TabIndex = 8
+        Me.ButtonTambahKoleksi.TabIndex = 17
         Me.ButtonTambahKoleksi.Text = "Tambah Koleksi"
         Me.ButtonTambahKoleksi.UseVisualStyleBackColor = True
         '
@@ -322,16 +322,16 @@ Partial Class FormTambahKoleksi
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(620, 837)
         Me.Controls.Add(Me.ButtonTambahKoleksi)
-        Me.Controls.Add(Me.GroupBoxKategori)
-        Me.Controls.Add(Me.GroupBoxBahasa)
-        Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.RichTextBox1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.GroupBoxInputKategori)
+        Me.Controls.Add(Me.GroupBoxInputBahasa)
+        Me.Controls.Add(Me.DateTimePickerInputTanggalMasukKoleksi)
+        Me.Controls.Add(Me.RichTextBoxInputDeskripsi)
+        Me.Controls.Add(Me.ComboBoxInputJenisKoleksi)
+        Me.Controls.Add(Me.TextBoxInputStock)
+        Me.Controls.Add(Me.TextBoxInputLokasiRak)
+        Me.Controls.Add(Me.TextBoxInputTahunTerbit)
+        Me.Controls.Add(Me.TextBoxInputPenerbit)
+        Me.Controls.Add(Me.TextBoxInputNamaKoleksi)
         Me.Controls.Add(Me.LabelKategori)
         Me.Controls.Add(Me.LabelBahasa)
         Me.Controls.Add(Me.LabelStock)
@@ -347,10 +347,10 @@ Partial Class FormTambahKoleksi
         Me.Name = "FormTambahKoleksi"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "TambahKoleksi"
-        Me.GroupBoxBahasa.ResumeLayout(False)
-        Me.GroupBoxBahasa.PerformLayout()
-        Me.GroupBoxKategori.ResumeLayout(False)
-        Me.GroupBoxKategori.PerformLayout()
+        Me.GroupBoxInputBahasa.ResumeLayout(False)
+        Me.GroupBoxInputBahasa.PerformLayout()
+        Me.GroupBoxInputKategori.ResumeLayout(False)
+        Me.GroupBoxInputKategori.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -359,27 +359,27 @@ Partial Class FormTambahKoleksi
     Friend WithEvents LabelTambahKoleksi As Label
     Friend WithEvents PanelImage As Panel
     Friend WithEvents LabelNamaKoleksi As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBoxInputNamaKoleksi As TextBox
     Friend WithEvents LabelJenisKoleksi As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ComboBoxInputJenisKoleksi As ComboBox
     Friend WithEvents LabelDeskripsi As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents RichTextBoxInputDeskripsi As RichTextBox
     Friend WithEvents LabelPenerbit As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBoxInputPenerbit As TextBox
     Friend WithEvents LabelTahunTerbit As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBoxInputTahunTerbit As TextBox
     Friend WithEvents LabelLokasiRak As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBoxInputLokasiRak As TextBox
     Friend WithEvents LabelTanggalMasukKoleksi As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents DateTimePickerInputTanggalMasukKoleksi As DateTimePicker
     Friend WithEvents LabelStock As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBoxInputStock As TextBox
     Friend WithEvents LabelBahasa As Label
-    Friend WithEvents GroupBoxBahasa As GroupBox
+    Friend WithEvents GroupBoxInputBahasa As GroupBox
     Friend WithEvents RadioButtonBahasaInggris As RadioButton
     Friend WithEvents RadioButtonBahasaIndonesia As RadioButton
     Friend WithEvents LabelKategori As Label
-    Friend WithEvents GroupBoxKategori As GroupBox
+    Friend WithEvents GroupBoxInputKategori As GroupBox
     Friend WithEvents CheckBoxSosial As CheckBox
     Friend WithEvents CheckBoxSains As CheckBox
     Friend WithEvents CheckBoxBudaya As CheckBox
