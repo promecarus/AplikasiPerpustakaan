@@ -23,7 +23,6 @@ Partial Class FormTambahKoleksi
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.LabelTambahKoleksi = New System.Windows.Forms.Label()
-        Me.PanelImage = New System.Windows.Forms.Panel()
         Me.LabelNamaKoleksi = New System.Windows.Forms.Label()
         Me.TextBoxInputNamaKoleksi = New System.Windows.Forms.TextBox()
         Me.LabelJenisKoleksi = New System.Windows.Forms.Label()
@@ -51,8 +50,12 @@ Partial Class FormTambahKoleksi
         Me.CheckBoxSosial = New System.Windows.Forms.CheckBox()
         Me.CheckBoxSains = New System.Windows.Forms.CheckBox()
         Me.ButtonTambahKoleksi = New System.Windows.Forms.Button()
+        Me.ButtonTambahGambar = New System.Windows.Forms.Button()
+        Me.OpenFileDialogGambarKoleksi = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBoxGambarKoleksi = New System.Windows.Forms.PictureBox()
         Me.GroupBoxInputBahasa.SuspendLayout()
         Me.GroupBoxInputKategori.SuspendLayout()
+        CType(Me.PictureBoxGambarKoleksi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelTambahKoleksi
@@ -64,13 +67,6 @@ Partial Class FormTambahKoleksi
         Me.LabelTambahKoleksi.Size = New System.Drawing.Size(160, 28)
         Me.LabelTambahKoleksi.TabIndex = 0
         Me.LabelTambahKoleksi.Text = "Tambah Koleksi"
-        '
-        'PanelImage
-        '
-        Me.PanelImage.Location = New System.Drawing.Point(20, 60)
-        Me.PanelImage.Name = "PanelImage"
-        Me.PanelImage.Size = New System.Drawing.Size(160, 200)
-        Me.PanelImage.TabIndex = 1
         '
         'LabelNamaKoleksi
         '
@@ -316,11 +312,34 @@ Partial Class FormTambahKoleksi
         Me.ButtonTambahKoleksi.Text = "Tambah Koleksi"
         Me.ButtonTambahKoleksi.UseVisualStyleBackColor = True
         '
+        'ButtonTambahGambar
+        '
+        Me.ButtonTambahGambar.Location = New System.Drawing.Point(20, 266)
+        Me.ButtonTambahGambar.Name = "ButtonTambahGambar"
+        Me.ButtonTambahGambar.Size = New System.Drawing.Size(160, 29)
+        Me.ButtonTambahGambar.TabIndex = 18
+        Me.ButtonTambahGambar.Text = "Tambah Gambar"
+        Me.ButtonTambahGambar.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialogGambarKoleksi
+        '
+        Me.OpenFileDialogGambarKoleksi.FileName = "OpenFileDialog1"
+        '
+        'PictureBoxGambarKoleksi
+        '
+        Me.PictureBoxGambarKoleksi.Location = New System.Drawing.Point(20, 60)
+        Me.PictureBoxGambarKoleksi.Name = "PictureBoxGambarKoleksi"
+        Me.PictureBoxGambarKoleksi.Size = New System.Drawing.Size(160, 200)
+        Me.PictureBoxGambarKoleksi.TabIndex = 19
+        Me.PictureBoxGambarKoleksi.TabStop = False
+        '
         'FormTambahKoleksi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(620, 837)
+        Me.Controls.Add(Me.PictureBoxGambarKoleksi)
+        Me.Controls.Add(Me.ButtonTambahGambar)
         Me.Controls.Add(Me.ButtonTambahKoleksi)
         Me.Controls.Add(Me.GroupBoxInputKategori)
         Me.Controls.Add(Me.GroupBoxInputBahasa)
@@ -342,7 +361,6 @@ Partial Class FormTambahKoleksi
         Me.Controls.Add(Me.LabelDeskripsi)
         Me.Controls.Add(Me.LabelJenisKoleksi)
         Me.Controls.Add(Me.LabelNamaKoleksi)
-        Me.Controls.Add(Me.PanelImage)
         Me.Controls.Add(Me.LabelTambahKoleksi)
         Me.Name = "FormTambahKoleksi"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -351,13 +369,13 @@ Partial Class FormTambahKoleksi
         Me.GroupBoxInputBahasa.PerformLayout()
         Me.GroupBoxInputKategori.ResumeLayout(False)
         Me.GroupBoxInputKategori.PerformLayout()
+        CType(Me.PictureBoxGambarKoleksi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents LabelTambahKoleksi As Label
-    Friend WithEvents PanelImage As Panel
     Friend WithEvents LabelNamaKoleksi As Label
     Friend WithEvents TextBoxInputNamaKoleksi As TextBox
     Friend WithEvents LabelJenisKoleksi As Label
@@ -385,4 +403,7 @@ Partial Class FormTambahKoleksi
     Friend WithEvents CheckBoxBudaya As CheckBox
     Friend WithEvents CheckBoxTeknologi As CheckBox
     Friend WithEvents ButtonTambahKoleksi As Button
+    Friend WithEvents ButtonTambahGambar As Button
+    Friend WithEvents OpenFileDialogGambarKoleksi As OpenFileDialog
+    Friend WithEvents PictureBoxGambarKoleksi As PictureBox
 End Class
