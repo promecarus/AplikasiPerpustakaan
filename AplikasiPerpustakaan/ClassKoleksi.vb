@@ -1,16 +1,87 @@
-﻿Public Class ClassKoleksi
+﻿Imports System.Text
+
+Public Class ClassKoleksi
     Private namaKoleksi As String
-    Private jenisKoleksi As String
-    Private deskripsi As String
+    Private dirGambarBuku
+    Private deskripsiKoleksi As String
     Private penerbit As String
+    Private jenisKoleksi As String
     Private tahunTerbit As Integer
-    Private lokasiRak As String
+    Private lokasi As String
     Private tanggalMasukKoleksi As Date
     Private stock As Integer
     Private bahasa As String
-    Private kategoriList As New List(Of String)
-    Private gambarKoleksi
+    Private kategori As New List(Of String)
+    Private listKoleksi As New List(Of String)
 
+    Private koleksiDataTable As New ArrayList()
+
+    Public Function ConvertKoleksiToString(vals As List(Of String))
+        Dim builder As StringBuilder = New StringBuilder()
+        For Each val As String In vals
+            builder.Append(val).Append("|")
+        Next
+
+        'Convert to string.
+        Dim res = builder.ToString
+        Return res
+    End Function
+
+    Public Function ConvertStringToKoleksi(value As String)
+        Dim arr() As String = value.Split("|")
+
+        'Convert to list.
+        Dim vals As List(Of String) = arr.ToList()
+        Return vals
+    End Function
+
+    'Public Function AddKoleksiDataTable(dir_gambar As String,
+    '                                    nama_koleksi As String,
+    '                                    jenis_koleksi As String,
+    '                                    penerbit_koleksi As String,
+    '                                    deskripsi_koleksi As String,
+    '                                    tahun_terbit As String,
+    '                                    lokasi_rak As String,
+    '                                    tanggal_masuk As String,
+    '                                    stock_koleksi As Integer,
+    '                                    bahasa_koleksi As String,
+    '                                    kategori_koleksi As String)
+    Public Function AddKoleksiDataTable(dir_gambar As String,
+                                        nama_koleksi As String,
+                                        jenis_koleksi As String,
+                                        penerbit_koleksi As String,
+                                        deskripsi_koleksi As String,
+                                        tahun_terbit As String,
+                                        lokasi_rak As String,
+                                        tanggal_masuk As String,
+                                        stock_koleksi As Integer,
+                                        bahasa_koleksi As String,
+                                        kategori_koleksi As String)
+        koleksiDataTable.Add({dir_gambar,
+                             nama_koleksi,
+                             jenis_koleksi,
+                             penerbit_koleksi,
+                             deskripsi_koleksi,
+                             tahun_terbit,
+                             lokasi_rak,
+                             tanggal_masuk,
+                             stock_koleksi,
+                             bahasa_koleksi,
+                             kategori_koleksi})
+    End Function
+
+    Public Function RemoveKoleksiDataTable(index As Integer)
+        koleksiDataTable.RemoveAt(index)
+        Return "" 'sus
+    End Function
+
+    Public ReadOnly Property getKoleksiDataTable() As ArrayList
+        Get
+            Return koleksiDataTable
+        End Get
+    End Property
+
+    'setter getter
     Public Property GSNamaKoleksi() As String
         Get
             Return namaKoleksi
@@ -20,21 +91,21 @@
         End Set
     End Property
 
-    Public Property GSJenisKoleksi() As String
+    Public Property GSDirGambarBuku()
         Get
-            Return jenisKoleksi
+            Return dirGambarBuku
         End Get
-        Set(ByVal value As String)
-            jenisKoleksi = value
+        Set(ByVal value)
+            dirGambarBuku = value
         End Set
     End Property
 
-    Public Property GSDeskripsi() As String
+    Public Property GSDeskripsiKoleksi() As String
         Get
-            Return deskripsi
+            Return deskripsiKoleksi
         End Get
         Set(ByVal value As String)
-            deskripsi = value
+            deskripsiKoleksi = value
         End Set
     End Property
 
@@ -47,6 +118,15 @@
         End Set
     End Property
 
+    Public Property GSJenisKoleksi() As String
+        Get
+            Return jenisKoleksi
+        End Get
+        Set(ByVal value As String)
+            jenisKoleksi = value
+        End Set
+    End Property
+
     Public Property GSTahunTerbit() As Integer
         Get
             Return tahunTerbit
@@ -56,12 +136,12 @@
         End Set
     End Property
 
-    Public Property GSLokasiRak() As String
+    Public Property GSLokasi() As String
         Get
-            Return lokasiRak
+            Return lokasi
         End Get
         Set(ByVal value As String)
-            lokasiRak = value
+            lokasi = value
         End Set
     End Property
 
@@ -92,21 +172,55 @@
         End Set
     End Property
 
-    Public Property GSKategoriList()
+    Public Property GSKategori()
         Get
-            Return kategoriList
+            Return kategori
         End Get
         Set(ByVal value)
-            kategoriList = value
+            kategori = value
         End Set
     End Property
 
-    Public Property GSGambarKoleksi()
+    'kategori
+    Public Function AddKategori(value As String)
+        kategori.Add(value)
+        Return ""
+    End Function
+
+    Public ReadOnly Property getKategoriItem() As List(Of String)
         Get
-            Return gambarKoleksi
+            Return kategori
+        End Get
+    End Property
+
+    Public Function ResetKategori()
+        kategori.Clear()
+        Return "" 'sus
+    End Function
+
+    Public Property GSListKoleksi()
+        Get
+            Return listKoleksi
         End Get
         Set(ByVal value)
-            gambarKoleksi = value
+            listKoleksi = value
         End Set
+    End Property
+
+    'koleksi
+    Public Function AddKoleksi(value As String)
+        listKoleksi.Add(value)
+        Return ""
+    End Function
+
+    Public Function RemoveKoleksi(value As String)
+        listKoleksi.Remove(value)
+        Return ""
+    End Function
+
+    Public ReadOnly Property getKoleksiItem() As List(Of String)
+        Get
+            Return listKoleksi
+        End Get
     End Property
 End Class
