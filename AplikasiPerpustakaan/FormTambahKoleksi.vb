@@ -23,19 +23,19 @@
 
     Private Sub ButtonTambahKoleksi_Click(sender As Object, e As EventArgs) Handles ButtonTambahKoleksi.Click
         If OpenFileDialogGambarKoleksi.FileName.ToString IsNot "OpenFileDialog1" Then
-            FormPerpustakaan.dataKoleksi.GSGambarKoleksi = OpenFileDialogGambarKoleksi.FileName
+            FormPerpustakaan.dataKoleksi.GSDirGambarBuku = OpenFileDialogGambarKoleksi.FileName
         End If
 
         FormPerpustakaan.dataKoleksi.GSNamaKoleksi = TextBoxInputNamaKoleksi.Text
         FormPerpustakaan.dataKoleksi.GSJenisKoleksi = ComboBoxInputJenisKoleksi.SelectedItem
-        FormPerpustakaan.dataKoleksi.GSDeskripsi = RichTextBoxInputDeskripsi.Text
+        FormPerpustakaan.dataKoleksi.GSDeskripsiKoleksi = RichTextBoxInputDeskripsi.Text
         FormPerpustakaan.dataKoleksi.GSPenerbit = TextBoxInputPenerbit.Text
 
         If TextBoxInputTahunTerbit.Text.Length > 0 And IsNumeric(TextBoxInputTahunTerbit.Text) Then
             FormPerpustakaan.dataKoleksi.GSTahunTerbit = Integer.Parse(TextBoxInputTahunTerbit.Text)
         End If
 
-        FormPerpustakaan.dataKoleksi.GSLokasiRak = TextBoxInputLokasiRak.Text
+        FormPerpustakaan.dataKoleksi.GSLokasi = TextBoxInputLokasiRak.Text
         FormPerpustakaan.dataKoleksi.GSTanggalMasukKoleksi = DateTimePickerInputTanggalMasukKoleksi.Value.ToShortDateString
 
         If TextBoxInputTahunTerbit.Text.Length > 0 And IsNumeric(TextBoxInputTahunTerbit.Text) Then
@@ -50,16 +50,16 @@
         End If
 
         If CheckBoxSains.Checked() Then
-            FormPerpustakaan.dataKoleksi.GSKategoriList.Add(CheckBoxSains.Text)
+            FormPerpustakaan.dataKoleksi.GSKategori.Add(CheckBoxSains.Text)
         End If
         If CheckBoxSosial.Checked() Then
-            FormPerpustakaan.dataKoleksi.GSKategoriList.Add(CheckBoxSosial.Text)
+            FormPerpustakaan.dataKoleksi.GSKategori.Add(CheckBoxSosial.Text)
         End If
         If CheckBoxTeknologi.Checked() Then
-            FormPerpustakaan.dataKoleksi.GSKategoriList.Add(CheckBoxTeknologi.Text)
+            FormPerpustakaan.dataKoleksi.GSKategori.Add(CheckBoxTeknologi.Text)
         End If
         If CheckBoxBudaya.Checked() Then
-            FormPerpustakaan.dataKoleksi.GSKategoriList.Add(CheckBoxBudaya.Text)
+            FormPerpustakaan.dataKoleksi.GSKategori.Add(CheckBoxBudaya.Text)
         End If
 
         If String.IsNullOrEmpty(FormPerpustakaan.dataKoleksi.GSNamaKoleksi) Then
@@ -68,9 +68,43 @@
 
         'FormPerpustakaan.listDataKoleksi.Add(New KoleksiData(FormPerpustakaan.dataKoleksi.GSNamaKoleksi))
 
+        Dim convertedKoleksi = FormPerpustakaan.dataKoleksi.ConvertKoleksiToString(FormPerpustakaan.dataKoleksi.getKategoriItem)
+        FormPerpustakaan.dataKoleksi.AddKoleksiDataTable(
+                                                            FormPerpustakaan.dataKoleksi.GSDirGambarBuku,
+                                                            FormPerpustakaan.dataKoleksi.GSNamaKoleksi,
+                                                            FormPerpustakaan.dataKoleksi.GSJenisKoleksi,
+                                                            FormPerpustakaan.dataKoleksi.GSPenerbit,
+                                                            FormPerpustakaan.dataKoleksi.GSDeskripsiKoleksi,
+                                                            FormPerpustakaan.dataKoleksi.GSTahunTerbit,
+                                                            FormPerpustakaan.dataKoleksi.GSLokasi,
+                                                            FormPerpustakaan.dataKoleksi.GSTanggalMasukKoleksi,
+                                                            FormPerpustakaan.dataKoleksi.GSStock,
+                                                            FormPerpustakaan.dataKoleksi.GSBahasa,
+                                                            convertedKoleksi
+                                                        )
+
+
         Dim formInfoTambahKoleksi = New FormInfoTambahKoleksi()
         Me.Hide()
         formInfoTambahKoleksi.Show()
     End Sub
 
 End Class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
