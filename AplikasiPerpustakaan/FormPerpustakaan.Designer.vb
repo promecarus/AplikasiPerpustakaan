@@ -30,8 +30,14 @@ Partial Class FormPerpustakaan
         Me.ToolStripButtonPlus = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButtonMinus = New System.Windows.Forms.ToolStripButton()
         Me.ListBoxKoleksi = New System.Windows.Forms.ListBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ColumnNamaKoleksi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnJenisKoleksi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnPenerbit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnTahunTerbit = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip
@@ -40,7 +46,7 @@ Partial Class FormPerpustakaan
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KoleksiToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(382, 28)
+        Me.MenuStrip.Size = New System.Drawing.Size(1080, 28)
         Me.MenuStrip.TabIndex = 0
         Me.MenuStrip.Text = "MenuStrip1"
         '
@@ -63,7 +69,7 @@ Partial Class FormPerpustakaan
         Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButtonPlus, Me.ToolStripButtonMinus})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 28)
         Me.ToolStrip.Name = "ToolStrip"
-        Me.ToolStrip.Size = New System.Drawing.Size(382, 27)
+        Me.ToolStrip.Size = New System.Drawing.Size(1080, 27)
         Me.ToolStrip.TabIndex = 1
         Me.ToolStrip.Text = "ToolStrip1"
         '
@@ -94,11 +100,51 @@ Partial Class FormPerpustakaan
         Me.ListBoxKoleksi.Size = New System.Drawing.Size(358, 384)
         Me.ListBoxKoleksi.TabIndex = 3
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnNamaKoleksi, Me.ColumnJenisKoleksi, Me.ColumnPenerbit, Me.ColumnTahunTerbit})
+        Me.DataGridView1.Location = New System.Drawing.Point(376, 58)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 29
+        Me.DataGridView1.Size = New System.Drawing.Size(556, 384)
+        Me.DataGridView1.TabIndex = 4
+        '
+        'ColumnNamaKoleksi
+        '
+        Me.ColumnNamaKoleksi.HeaderText = "Nama Koleksi"
+        Me.ColumnNamaKoleksi.MinimumWidth = 6
+        Me.ColumnNamaKoleksi.Name = "ColumnNamaKoleksi"
+        Me.ColumnNamaKoleksi.Width = 125
+        '
+        'ColumnJenisKoleksi
+        '
+        Me.ColumnJenisKoleksi.HeaderText = "Jenis Koleksi"
+        Me.ColumnJenisKoleksi.MinimumWidth = 6
+        Me.ColumnJenisKoleksi.Name = "ColumnJenisKoleksi"
+        Me.ColumnJenisKoleksi.Width = 125
+        '
+        'ColumnPenerbit
+        '
+        Me.ColumnPenerbit.HeaderText = "Penerbit"
+        Me.ColumnPenerbit.MinimumWidth = 6
+        Me.ColumnPenerbit.Name = "ColumnPenerbit"
+        Me.ColumnPenerbit.Width = 125
+        '
+        'ColumnTahunTerbit
+        '
+        Me.ColumnTahunTerbit.HeaderText = "Tahun Terbit"
+        Me.ColumnTahunTerbit.MinimumWidth = 6
+        Me.ColumnTahunTerbit.Name = "ColumnTahunTerbit"
+        Me.ColumnTahunTerbit.Width = 125
+        '
         'FormPerpustakaan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(382, 454)
+        Me.ClientSize = New System.Drawing.Size(1080, 454)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.ListBoxKoleksi)
         Me.Controls.Add(Me.ToolStrip)
         Me.Controls.Add(Me.MenuStrip)
@@ -110,6 +156,7 @@ Partial Class FormPerpustakaan
         Me.MenuStrip.PerformLayout()
         Me.ToolStrip.ResumeLayout(False)
         Me.ToolStrip.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -122,4 +169,9 @@ Partial Class FormPerpustakaan
     Friend WithEvents ToolStripButtonPlus As ToolStripButton
     Friend WithEvents ToolStripButtonMinus As ToolStripButton
     Friend WithEvents ListBoxKoleksi As ListBox
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ColumnNamaKoleksi As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnJenisKoleksi As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnPenerbit As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnTahunTerbit As DataGridViewTextBoxColumn
 End Class
