@@ -35,17 +35,6 @@ Public Class ClassKoleksi
         Return vals
     End Function
 
-    'Public Function AddKoleksiDataTable(dir_gambar As String,
-    '                                    nama_koleksi As String,
-    '                                    jenis_koleksi As String,
-    '                                    penerbit_koleksi As String,
-    '                                    deskripsi_koleksi As String,
-    '                                    tahun_terbit As String,
-    '                                    lokasi_rak As String,
-    '                                    tanggal_masuk As String,
-    '                                    stock_koleksi As Integer,
-    '                                    bahasa_koleksi As String,
-    '                                    kategori_koleksi As String)
     Public Function AddKoleksiDataTable(dir_gambar As String,
                                         nama_koleksi As String,
                                         jenis_koleksi As String,
@@ -72,7 +61,7 @@ Public Class ClassKoleksi
 
     Public Function RemoveKoleksiDataTable(index As Integer)
         koleksiDataTable.RemoveAt(index)
-        Return "" 'sus
+        'Return "" 'sus
     End Function
 
     Public ReadOnly Property getKoleksiDataTable() As ArrayList
