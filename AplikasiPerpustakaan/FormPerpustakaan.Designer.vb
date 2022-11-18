@@ -31,6 +31,7 @@ Partial Class FormPerpustakaan
         Me.ToolStripButtonMinus = New System.Windows.Forms.ToolStripButton()
         Me.ListBoxKoleksi = New System.Windows.Forms.ListBox()
         Me.DataGridViewKoleksi = New System.Windows.Forms.DataGridView()
+        Me.ColumnDirGambar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ColumnNamaKoleksi = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnJenisKoleksi = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnPenerbit = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,7 +42,6 @@ Partial Class FormPerpustakaan
         Me.ColumnStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnBahasa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnKategori = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColumnDirGambar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         CType(Me.DataGridViewKoleksi, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,13 +110,23 @@ Partial Class FormPerpustakaan
         'DataGridViewKoleksi
         '
         Me.DataGridViewKoleksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewKoleksi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnNamaKoleksi, Me.ColumnJenisKoleksi, Me.ColumnPenerbit, Me.ColumnDeskripsi, Me.ColumnTahunTerbit, Me.ColumnLokasiRak, Me.ColumnTanggalMasuk, Me.ColumnStock, Me.ColumnBahasa, Me.ColumnKategori, Me.ColumnDirGambar})
+        Me.DataGridViewKoleksi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnDirGambar, Me.ColumnNamaKoleksi, Me.ColumnJenisKoleksi, Me.ColumnPenerbit, Me.ColumnDeskripsi, Me.ColumnTahunTerbit, Me.ColumnLokasiRak, Me.ColumnTanggalMasuk, Me.ColumnStock, Me.ColumnBahasa, Me.ColumnKategori})
         Me.DataGridViewKoleksi.Location = New System.Drawing.Point(12, 208)
         Me.DataGridViewKoleksi.Name = "DataGridViewKoleksi"
         Me.DataGridViewKoleksi.RowHeadersWidth = 51
         Me.DataGridViewKoleksi.RowTemplate.Height = 29
         Me.DataGridViewKoleksi.Size = New System.Drawing.Size(554, 384)
         Me.DataGridViewKoleksi.TabIndex = 4
+        '
+        'ColumnDirGambar
+        '
+        Me.ColumnDirGambar.HeaderText = "Gambar"
+        Me.ColumnDirGambar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.ColumnDirGambar.MinimumWidth = 6
+        Me.ColumnDirGambar.Name = "ColumnDirGambar"
+        Me.ColumnDirGambar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ColumnDirGambar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.ColumnDirGambar.Width = 125
         '
         'ColumnNamaKoleksi
         '
@@ -188,16 +198,6 @@ Partial Class FormPerpustakaan
         Me.ColumnKategori.Name = "ColumnKategori"
         Me.ColumnKategori.Width = 125
         '
-        'ColumnDirGambar
-        '
-        Me.ColumnDirGambar.HeaderText = "Gambar"
-        Me.ColumnDirGambar.MinimumWidth = 6
-        Me.ColumnDirGambar.Name = "ColumnDirGambar"
-        Me.ColumnDirGambar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ColumnDirGambar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.ColumnDirGambar.Visible = False
-        Me.ColumnDirGambar.Width = 125
-        '
         'FormPerpustakaan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -229,6 +229,7 @@ Partial Class FormPerpustakaan
     Friend WithEvents ToolStripButtonMinus As ToolStripButton
     Friend WithEvents ListBoxKoleksi As ListBox
     Friend WithEvents DataGridViewKoleksi As DataGridView
+    Friend WithEvents ColumnDirGambar As DataGridViewImageColumn
     Friend WithEvents ColumnNamaKoleksi As DataGridViewTextBoxColumn
     Friend WithEvents ColumnJenisKoleksi As DataGridViewTextBoxColumn
     Friend WithEvents ColumnPenerbit As DataGridViewTextBoxColumn
@@ -239,5 +240,4 @@ Partial Class FormPerpustakaan
     Friend WithEvents ColumnStock As DataGridViewTextBoxColumn
     Friend WithEvents ColumnBahasa As DataGridViewTextBoxColumn
     Friend WithEvents ColumnKategori As DataGridViewTextBoxColumn
-    Friend WithEvents ColumnDirGambar As DataGridViewImageColumn
 End Class
