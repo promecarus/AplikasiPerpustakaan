@@ -1,7 +1,6 @@
 ﻿Public Class FormTambahKoleksi
 
     Dim jenisKoleksi As New List(Of String) From {"Buku", "Ensiklopedia", "Koran", "Majalah", "Publikasi", "Penelitian"}
-
     Public Sub New()
         ' This call is required by the designer.
         InitializeComponent()
@@ -66,9 +65,8 @@
             FormPerpustakaan.listDataKoleksi.Add(FormPerpustakaan.dataKoleksi.GSNamaKoleksi)
         End If
 
-        'FormPerpustakaan.listDataKoleksi.Add(New KoleksiData(FormPerpustakaan.dataKoleksi.GSNamaKoleksi))
-
-        Dim convertedKoleksi = FormPerpustakaan.dataKoleksi.ConvertKoleksiToString(FormPerpustakaan.dataKoleksi.getKategoriItem)
+            'FormPerpustakaan.listDataKoleksi.Add(New KoleksiData(FormPerpustakaan.dataKoleksi.GSNamaKoleksi))
+            Dim convertedKoleksi = FormPerpustakaan.dataKoleksi.ConvertKoleksiToString(FormPerpustakaan.dataKoleksi.getKategoriItem)
         FormPerpustakaan.dataKoleksi.AddKoleksiDataTable(FormPerpustakaan.dataKoleksi.GSDirGambarBuku,
                                                          FormPerpustakaan.dataKoleksi.GSNamaKoleksi,
                                                          FormPerpustakaan.dataKoleksi.GSJenisKoleksi,
