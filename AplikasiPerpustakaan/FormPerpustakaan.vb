@@ -8,6 +8,7 @@
 
         ' Add any initialization after the InitializeComponent() call.
         dataKoleksi = New ClassKoleksi
+        UpdateTableDataArrayList()
     End Sub
 
     Public Sub tambahKoleksi(nama As String)
@@ -32,5 +33,41 @@
             Me.Hide()
             FormHapusKoleksi.Show()
         End If
+    End Sub
+
+    Public Sub UpdateTableDataArrayList()
+        DataGridViewKoleksi.Rows.Clear()
+        For Each rowKoleksi In dataKoleksi.getKoleksiDataTable()
+            'Dim dataTable As String() = {
+            '    rowKoleksi(0),
+            '    rowKoleksi(1),
+            '    rowKoleksi(2),
+            '    rowKoleksi(3),
+            '    rowKoleksi(4),
+            '    rowKoleksi(5),
+            '    rowKoleksi(6),
+            '    rowKoleksi(7),
+            '    rowKoleksi(8),
+            '    rowKoleksi(9),
+            '    rowKoleksi(10)
+            '}
+            Dim dataTable = {
+                rowKoleksi(1),
+                rowKoleksi(2),
+                rowKoleksi(3),
+                rowKoleksi(4),
+                rowKoleksi(5),
+                rowKoleksi(6),
+                rowKoleksi(7),
+                rowKoleksi(8),
+                rowKoleksi(9),
+                rowKoleksi(10)
+            }
+            DataGridViewKoleksi.Rows.Add(dataTable)
+        Next
+    End Sub
+
+    Private Sub FormPerpustakaan_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        UpdateTableDataArrayList()
     End Sub
 End Class
