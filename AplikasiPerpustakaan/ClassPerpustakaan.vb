@@ -3,6 +3,5 @@
 
     Public Sub New()
         koleksi = New ClassKoleksi()
-
     End Sub
 End Class
