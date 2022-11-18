@@ -35,23 +35,17 @@
         End If
     End Sub
 
+    Friend Function BlankImage() As Image
+        Dim oBM As New Bitmap(1, 1)
+        oBM.SetPixel(0, 0, Color.Transparent)
+        Return oBM
+    End Function
+
     Public Sub UpdateTableDataArrayList()
         DataGridViewKoleksi.Rows.Clear()
         For Each rowKoleksi In dataKoleksi.getKoleksiDataTable()
-            'Dim dataTable As String() = {
-            '    rowKoleksi(0),
-            '    rowKoleksi(1),
-            '    rowKoleksi(2),
-            '    rowKoleksi(3),
-            '    rowKoleksi(4),
-            '    rowKoleksi(5),
-            '    rowKoleksi(6),
-            '    rowKoleksi(7),
-            '    rowKoleksi(8),
-            '    rowKoleksi(9),
-            '    rowKoleksi(10)
-            '}
             Dim dataTable = {
+                If(rowKoleksi(0) IsNot Nothing, Image.FromFile(rowKoleksi(0)), BlankImage()),
                 rowKoleksi(1),
                 rowKoleksi(2),
                 rowKoleksi(3),
