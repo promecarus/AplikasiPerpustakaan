@@ -5,9 +5,7 @@
         Dim plainUsername As String = TextBoxUsername.Text
         Dim plainPassword As String = TextBoxPassword.Text
 
-        Dim AuthStatus As Boolean = Users.CheckAuth(plainUsername, plainPassword)
-
-        If AuthStatus Then
+        If Users.CheckAuth(plainUsername, plainPassword) Then
             FormPerpustakaan.Show()
         Else
             MessageBox.Show("Wrong Password")
