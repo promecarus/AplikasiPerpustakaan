@@ -199,12 +199,10 @@ Public Class ClassKoleksi
     'koleksi
     Public Function AddKoleksi(value As String)
         listKoleksi.Add(value)
-        Return ""
     End Function
 
     Public Function RemoveKoleksi(value As String)
         listKoleksi.Remove(value)
-        Return ""
     End Function
 
     Public ReadOnly Property getKoleksiItem() As List(Of String)
