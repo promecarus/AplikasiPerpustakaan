@@ -5,10 +5,14 @@
         Dim plainUsername As String = TextBoxUsername.Text
         Dim plainPassword As String = TextBoxPassword.Text
 
-        If Users.CheckAuth(plainUsername, plainPassword) Then
-            FormPerpustakaan.Show()
-        Else
-            MessageBox.Show("Wrong Password")
-        End If
+        Try
+            If Users.CheckAuth(plainUsername, plainPassword) Then
+                FormPerpustakaan.Show()
+            Else
+                MessageBox.Show("Password Salah")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Anda Belum Terdaftar")
+        End Try
     End Sub
 End Class
