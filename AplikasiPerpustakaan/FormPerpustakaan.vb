@@ -92,4 +92,8 @@
         Dim infoTambah = New FormInfoTambahKoleksi()
         infoTambah.Show()
     End Sub
+
+    Private Sub FormPerpustakaan_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        FormLogin.Show()
+    End Sub
 End Class
