@@ -27,6 +27,7 @@ Partial Class FormLogin
         Me.TextBoxUsername = New System.Windows.Forms.TextBox()
         Me.TextBoxPassword = New System.Windows.Forms.TextBox()
         Me.ButtonLogin = New System.Windows.Forms.Button()
+        Me.LinkLabelRegister = New System.Windows.Forms.LinkLabel()
         Me.SuspendLayout()
         '
         'LabelUsername
@@ -64,24 +65,36 @@ Partial Class FormLogin
         'ButtonLogin
         '
         Me.ButtonLogin.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ButtonLogin.Location = New System.Drawing.Point(0, 141)
+        Me.ButtonLogin.Location = New System.Drawing.Point(0, 174)
         Me.ButtonLogin.Name = "ButtonLogin"
         Me.ButtonLogin.Size = New System.Drawing.Size(320, 29)
         Me.ButtonLogin.TabIndex = 2
         Me.ButtonLogin.Text = "Login"
         Me.ButtonLogin.UseVisualStyleBackColor = True
         '
+        'LinkLabelRegister
+        '
+        Me.LinkLabelRegister.AutoSize = True
+        Me.LinkLabelRegister.Location = New System.Drawing.Point(212, 130)
+        Me.LinkLabelRegister.Name = "LinkLabelRegister"
+        Me.LinkLabelRegister.Size = New System.Drawing.Size(63, 20)
+        Me.LinkLabelRegister.TabIndex = 3
+        Me.LinkLabelRegister.TabStop = True
+        Me.LinkLabelRegister.Text = "Register"
+        '
         'FormLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(320, 170)
+        Me.ClientSize = New System.Drawing.Size(320, 203)
+        Me.Controls.Add(Me.LinkLabelRegister)
         Me.Controls.Add(Me.ButtonLogin)
         Me.Controls.Add(Me.TextBoxPassword)
         Me.Controls.Add(Me.TextBoxUsername)
         Me.Controls.Add(Me.LabelPassword)
         Me.Controls.Add(Me.LabelUsername)
         Me.Name = "FormLogin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -93,4 +106,5 @@ Partial Class FormLogin
     Friend WithEvents TextBoxUsername As TextBox
     Friend WithEvents TextBoxPassword As TextBox
     Friend WithEvents ButtonLogin As Button
+    Friend WithEvents LinkLabelRegister As LinkLabel
 End Class
