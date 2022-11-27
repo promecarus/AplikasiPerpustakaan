@@ -16,13 +16,15 @@ Public Class ClassUsers
     End Function
 
     Public Function CheckAuth(username As String, ByVal plainPassword As String) As String
-        Dim realPassword As String = EncryptData("1234")
-        Dim realUsername As String = "promecarus"
+        Dim credentials = New Dictionary(Of String, String) From {
+            {"admin", EncryptData("admin")},
+            {"user", EncryptData("user")},
+            {"promecarus", EncryptData("1")}
+        }
 
-        If String.Compare(username, realUsername) = 0 And String.Compare(EncryptData(plainPassword), realPassword) = 0 Then
-            Return True
-        Else
-            Return False
+        Dim tempPassword As String = ""
+        If credentials.TryGetValue(username, tempPassword) Then
+            Return String.Compare(EncryptData(plainPassword), tempPassword) = 0
         End If
     End Function
 End Class
