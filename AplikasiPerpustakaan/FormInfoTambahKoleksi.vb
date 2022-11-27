@@ -41,8 +41,7 @@
         FormPerpustakaan.dataKoleksi.GSKategori.Clear()
     End Sub
 
-    Private Sub ButtonTambahKoleksi_Click(sender As Object, e As EventArgs) Handles ButtonTambahKoleksi.Click
-        FormPerpustakaan.ListBoxKoleksi.Items.Add(LabelInfoNamaKoleksi.Text)
+    Private Sub ButtonTutup_Click(sender As Object, e As EventArgs) Handles ButtonTutup.Click
         FormPerpustakaan.Show()
         Me.Close()
     End Sub

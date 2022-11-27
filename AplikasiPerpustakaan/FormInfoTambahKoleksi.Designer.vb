@@ -25,7 +25,7 @@ Partial Class FormInfoTambahKoleksi
         Me.LabelKategori = New System.Windows.Forms.Label()
         Me.LabelBahasa = New System.Windows.Forms.Label()
         Me.PictureBoxInfoGambarKoleksi = New System.Windows.Forms.PictureBox()
-        Me.ButtonTambahKoleksi = New System.Windows.Forms.Button()
+        Me.ButtonTutup = New System.Windows.Forms.Button()
         Me.LabelStock = New System.Windows.Forms.Label()
         Me.OpenFileDialogGambarKoleksi = New System.Windows.Forms.OpenFileDialog()
         Me.LabelTanggalMasukKoleksi = New System.Windows.Forms.Label()
@@ -75,15 +75,15 @@ Partial Class FormInfoTambahKoleksi
         Me.PictureBoxInfoGambarKoleksi.TabIndex = 43
         Me.PictureBoxInfoGambarKoleksi.TabStop = False
         '
-        'ButtonTambahKoleksi
+        'ButtonTutup
         '
-        Me.ButtonTambahKoleksi.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ButtonTambahKoleksi.Location = New System.Drawing.Point(0, 808)
-        Me.ButtonTambahKoleksi.Name = "ButtonTambahKoleksi"
-        Me.ButtonTambahKoleksi.Size = New System.Drawing.Size(620, 29)
-        Me.ButtonTambahKoleksi.TabIndex = 41
-        Me.ButtonTambahKoleksi.Text = "Tutup"
-        Me.ButtonTambahKoleksi.UseVisualStyleBackColor = True
+        Me.ButtonTutup.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ButtonTutup.Location = New System.Drawing.Point(0, 808)
+        Me.ButtonTutup.Name = "ButtonTutup"
+        Me.ButtonTutup.Size = New System.Drawing.Size(620, 29)
+        Me.ButtonTutup.TabIndex = 41
+        Me.ButtonTutup.Text = "Tutup"
+        Me.ButtonTutup.UseVisualStyleBackColor = True
         '
         'LabelStock
         '
@@ -270,7 +270,7 @@ Partial Class FormInfoTambahKoleksi
         Me.Controls.Add(Me.LabelKategori)
         Me.Controls.Add(Me.LabelBahasa)
         Me.Controls.Add(Me.PictureBoxInfoGambarKoleksi)
-        Me.Controls.Add(Me.ButtonTambahKoleksi)
+        Me.Controls.Add(Me.ButtonTutup)
         Me.Controls.Add(Me.LabelStock)
         Me.Controls.Add(Me.LabelTanggalMasukKoleksi)
         Me.Controls.Add(Me.LabelLokasiRak)
@@ -300,7 +300,7 @@ Partial Class FormInfoTambahKoleksi
     Friend WithEvents LabelKategori As Label
     Friend WithEvents LabelBahasa As Label
     Friend WithEvents PictureBoxInfoGambarKoleksi As PictureBox
-    Friend WithEvents ButtonTambahKoleksi As Button
+    Friend WithEvents ButtonTutup As Button
     Friend WithEvents LabelStock As Label
     Friend WithEvents OpenFileDialogGambarKoleksi As OpenFileDialog
     Friend WithEvents LabelTanggalMasukKoleksi As Label
