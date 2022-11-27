@@ -31,6 +31,6 @@ Public Class ClassUsers
     End Function
 
     Public Function AddAuth(username As String, password As String) As String
-
+        user.Add({username, EncryptData(password)})
     End Function
 End Class
