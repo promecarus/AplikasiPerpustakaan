@@ -42,6 +42,7 @@ Partial Class FormPerpustakaan
         Me.ColumnStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnBahasa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnKategori = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ButtonShow = New System.Windows.Forms.Button()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         CType(Me.DataGridViewKoleksi, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -198,11 +199,21 @@ Partial Class FormPerpustakaan
         Me.ColumnKategori.Name = "ColumnKategori"
         Me.ColumnKategori.Width = 125
         '
+        'ButtonShow
+        '
+        Me.ButtonShow.Location = New System.Drawing.Point(473, 603)
+        Me.ButtonShow.Name = "ButtonShow"
+        Me.ButtonShow.Size = New System.Drawing.Size(94, 29)
+        Me.ButtonShow.TabIndex = 5
+        Me.ButtonShow.Text = "Show"
+        Me.ButtonShow.UseVisualStyleBackColor = True
+        '
         'FormPerpustakaan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(578, 604)
+        Me.ClientSize = New System.Drawing.Size(578, 643)
+        Me.Controls.Add(Me.ButtonShow)
         Me.Controls.Add(Me.DataGridViewKoleksi)
         Me.Controls.Add(Me.ListBoxKoleksi)
         Me.Controls.Add(Me.ToolStrip)
@@ -240,4 +251,5 @@ Partial Class FormPerpustakaan
     Friend WithEvents ColumnStock As DataGridViewTextBoxColumn
     Friend WithEvents ColumnBahasa As DataGridViewTextBoxColumn
     Friend WithEvents ColumnKategori As DataGridViewTextBoxColumn
+    Friend WithEvents ButtonShow As Button
 End Class

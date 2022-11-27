@@ -1,6 +1,7 @@
 ﻿Public Class FormPerpustakaan
     Public Shared dataKoleksi As ClassKoleksi
     Public Shared listDataKoleksi As List(Of String)
+    Dim selectedTableKoleksi
 
     Public Sub New()
         ' This call is required by the designer.
@@ -63,5 +64,32 @@
 
     Private Sub FormPerpustakaan_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         UpdateTableDataArrayList()
+    End Sub
+
+    Private Sub DataGridViewKoleksi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewKoleksi.CellClick
+        selectedTableKoleksi = DataGridViewKoleksi.CurrentRow.Index
+    End Sub
+
+    Private Sub ButtonShow_Click(sender As Object, e As EventArgs) Handles ButtonShow.Click
+        Dim dataSelected = dataKoleksi.getKoleksiDataTable.Item(selectedTableKoleksi)
+
+        dataKoleksi.GSDirGambarBuku = dataSelected(0)
+        dataKoleksi.GSNamaKoleksi = dataSelected(1)
+        dataKoleksi.GSJenisKoleksi = dataSelected(2)
+        dataKoleksi.GSPenerbit = dataSelected(3)
+        dataKoleksi.GSDeskripsiKoleksi = dataSelected(4)
+        dataKoleksi.GSTahunTerbit = dataSelected(5)
+        dataKoleksi.GSLokasi = dataSelected(6)
+        dataKoleksi.GSTanggalMasukKoleksi = dataSelected(7)
+        dataKoleksi.GSStock = dataSelected(8)
+        dataKoleksi.GSBahasa = dataSelected(9)
+        Dim data_koleksi As List(Of String) = dataKoleksi.ConvertStringToKoleksi(dataSelected(10))
+
+        For Each info_tambah In data_koleksi
+            dataKoleksi.AddKoleksi(info_tambah)
+        Next
+
+        Dim infoTambah = New FormInfoTambahKoleksi()
+        infoTambah.Show()
     End Sub
 End Class
