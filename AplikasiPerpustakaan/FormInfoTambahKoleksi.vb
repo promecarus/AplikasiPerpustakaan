@@ -45,4 +45,8 @@
         FormPerpustakaan.Show()
         Me.Close()
     End Sub
+
+    Private Sub FormInfoTambahKoleksi_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        FormPerpustakaan.Show()
+    End Sub
 End Class
