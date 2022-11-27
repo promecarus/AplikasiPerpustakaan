@@ -2,8 +2,15 @@
 
 Public Class ClassUsers
     Private TripleDes As New TripleDESCryptoServiceProvider
+    Private user As ArrayList = New ArrayList()
 
-    Public Function EncryptData(ByVal plaintext As String) As String
+    Public Sub New()
+        user.Add({"admin", EncryptData("admin")})
+        user.Add({"user", EncryptData("user")})
+        user.Add({"promecarus", EncryptData("1")})
+    End Sub
+
+    Public Function EncryptData(plaintext As String) As String
         Dim plaintextBytes() As Byte = System.Text.Encoding.Unicode.GetBytes(plaintext)
 
         Dim ms As New System.IO.MemoryStream
@@ -15,16 +22,15 @@ Public Class ClassUsers
         Return Convert.ToBase64String(ms.ToArray)
     End Function
 
-    Public Function CheckAuth(username As String, ByVal plainPassword As String) As String
-        Dim credentials = New Dictionary(Of String, String) From {
-            {"admin", EncryptData("admin")},
-            {"user", EncryptData("user")},
-            {"promecarus", EncryptData("1")}
-        }
+    Public Function CheckAuth(username As String, plainPassword As String) As String
+        For Each item In user
+            If item(0) = username Then
+                Return String.Compare(EncryptData(plainPassword), item(1)) = 0
+            End If
+        Next
+    End Function
 
-        Dim tempPassword As String = ""
-        If credentials.TryGetValue(username, tempPassword) Then
-            Return String.Compare(EncryptData(plainPassword), tempPassword) = 0
-        End If
+    Public Function AddAuth(username As String, password As String) As String
+
     End Function
 End Class
