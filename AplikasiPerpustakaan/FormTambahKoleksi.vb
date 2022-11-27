@@ -65,8 +65,8 @@
             FormPerpustakaan.listDataKoleksi.Add(FormPerpustakaan.dataKoleksi.GSNamaKoleksi)
         End If
 
-            'FormPerpustakaan.listDataKoleksi.Add(New KoleksiData(FormPerpustakaan.dataKoleksi.GSNamaKoleksi))
-            Dim convertedKoleksi = FormPerpustakaan.dataKoleksi.ConvertKoleksiToString(FormPerpustakaan.dataKoleksi.getKategoriItem)
+        'FormPerpustakaan.listDataKoleksi.Add(New KoleksiData(FormPerpustakaan.dataKoleksi.GSNamaKoleksi))
+        Dim convertedKoleksi = FormPerpustakaan.dataKoleksi.ConvertKoleksiToString(FormPerpustakaan.dataKoleksi.getKategoriItem)
         FormPerpustakaan.dataKoleksi.AddKoleksiDataTable(FormPerpustakaan.dataKoleksi.GSDirGambarBuku,
                                                          FormPerpustakaan.dataKoleksi.GSNamaKoleksi,
                                                          FormPerpustakaan.dataKoleksi.GSJenisKoleksi,
@@ -79,6 +79,7 @@
                                                          FormPerpustakaan.dataKoleksi.GSBahasa,
                                                          convertedKoleksi)
 
+        FormPerpustakaan.ListBoxKoleksi.Items.Add(TextBoxInputNamaKoleksi.Text)
         Dim formInfoTambahKoleksi = New FormInfoTambahKoleksi()
         Me.Hide()
         formInfoTambahKoleksi.Show()
