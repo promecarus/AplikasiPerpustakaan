@@ -7,7 +7,8 @@ Public Class ClassUsers
     Public Sub New()
         user.Add({"admin", EncryptData("admin")})
         user.Add({"user", EncryptData("user")})
-        user.Add({"promecarus", EncryptData("1")})
+        user.Add({"1", EncryptData("1")})
+        user.Add({"haikal", EncryptData("1")})
     End Sub
 
     Public Function EncryptData(plaintext As String) As String
