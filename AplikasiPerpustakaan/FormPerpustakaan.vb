@@ -86,7 +86,7 @@
         Dim data_koleksi As List(Of String) = dataKoleksi.ConvertStringToKoleksi(dataSelected(10))
 
         For Each info_tambah In data_koleksi
-            dataKoleksi.AddKoleksi(info_tambah)
+            dataKoleksi.AddKategori(info_tambah)
         Next
 
         Dim infoTambah = New FormInfoTambahKoleksi()
