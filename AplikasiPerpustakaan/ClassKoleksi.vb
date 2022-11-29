@@ -61,7 +61,6 @@ Public Class ClassKoleksi
 
     Public Function RemoveKoleksiDataTable(index As Integer)
         koleksiDataTable.RemoveAt(index)
-        'Return "" 'sus
     End Function
 
     Public ReadOnly Property getKoleksiDataTable() As ArrayList
@@ -173,7 +172,6 @@ Public Class ClassKoleksi
     'kategori
     Public Function AddKategori(value As String)
         kategori.Add(value)
-        Return ""
     End Function
 
     Public ReadOnly Property getKategoriItem() As List(Of String)
@@ -184,7 +182,6 @@ Public Class ClassKoleksi
 
     Public Function ResetKategori()
         kategori.Clear()
-        Return "" 'sus
     End Function
 
     Public Property GSListKoleksi()
