@@ -2,6 +2,7 @@
     Public Shared dataKoleksi As ClassKoleksi
     Public Shared listDataKoleksi As List(Of String)
     Dim selectedTableKoleksi
+    Dim selectedTableKoleksiNama
 
     Public Sub New()
         ' This call is required by the designer.
@@ -10,6 +11,15 @@
         ' Add any initialization after the InitializeComponent() call.
         dataKoleksi = New ClassKoleksi
         UpdateTableDataArrayList()
+    End Sub
+
+    Private Sub FormPerpustakaan_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        'UpdateTableDataArrayList()
+        ReloadDataTableDatabase()
+    End Sub
+
+    Private Sub ReloadDataTableDatabase()
+        DataGridViewKoleksi.DataSource = dataKoleksi.GetDataKoleksiDatabase
     End Sub
 
     Public Sub tambahKoleksi(nama As String)
@@ -43,7 +53,7 @@
     End Function
 
     Public Sub UpdateTableDataArrayList()
-        DataGridViewKoleksi.Rows.Clear()
+        'DataGridViewKoleksi.Rows.Clear()
         For Each rowKoleksi In dataKoleksi.getKoleksiDataTable()
             Dim dataTable = {
                 If(rowKoleksi(0) IsNot Nothing, Image.FromFile(rowKoleksi(0)), BlankImage()),
@@ -58,19 +68,22 @@
                 rowKoleksi(9),
                 rowKoleksi(10)
             }
-            DataGridViewKoleksi.Rows.Add(dataTable)
+            DataGridViewK.Rows.Add(dataTable)
         Next
     End Sub
 
-    Private Sub FormPerpustakaan_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        UpdateTableDataArrayList()
-    End Sub
-
     Private Sub DataGridViewKoleksi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewKoleksi.CellClick
-        selectedTableKoleksi = DataGridViewKoleksi.CurrentRow.Index
+        'selectedTableKoleksi = DataGridViewKoleksi.CurrentRow.Index
+        Dim index As Integer = e.RowIndex
+        Dim selectedRow As DataGridViewRow
+        selectedRow = DataGridViewKoleksi.Rows(index)
+
+        selectedTableKoleksi = selectedRow.Cells(0).Value
+        selectedTableKoleksiNama = selectedRow.Cells(1).Value
     End Sub
 
     Private Sub ButtonShow_Click(sender As Object, e As EventArgs) Handles ButtonShow.Click
+        MessageBox.Show(selectedTableKoleksi)
         Dim dataSelected = dataKoleksi.getKoleksiDataTable.Item(selectedTableKoleksi)
 
         dataKoleksi.GSDirGambarBuku = dataSelected(0)
@@ -95,5 +108,30 @@
 
     Private Sub FormPerpustakaan_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         FormLogin.Show()
+    End Sub
+
+    Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
+        Dim selectedKoleksi As List(Of String) = dataKoleksi.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
+
+        dataKoleksi.GSDirGambarBuku = selectedKoleksi(2)
+
+        dataKoleksi.GSNamaKoleksi = selectedKoleksi(1)
+        dataKoleksi.GSJenisKoleksi = selectedKoleksi(5)
+        dataKoleksi.GSDeskripsiKoleksi = selectedKoleksi(3)
+        dataKoleksi.GSPenerbit = selectedKoleksi(4)
+        dataKoleksi.GSTahunTerbit = selectedKoleksi(6)
+        dataKoleksi.GSLokasi = selectedKoleksi(7)
+        dataKoleksi.GSTanggalMasukKoleksi = selectedKoleksi(8)
+        dataKoleksi.GSStock = selectedKoleksi(9)
+        dataKoleksi.GSBahasa = selectedKoleksi(10)
+        Dim data_kategori As List(Of String) = dataKoleksi.ConvertStringToKoleksi(selectedKoleksi(11))
+
+        For Each info_kategori In data_kategori
+            dataKoleksi.AddKoleksi(info_kategori)
+        Next
+
+        Dim formUpdate = New FormUpdateKoleksi()
+        formUpdate.Show()
+        Me.Hide()
     End Sub
 End Class
