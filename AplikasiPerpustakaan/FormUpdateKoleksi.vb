@@ -6,8 +6,11 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        PictureBoxGambarKoleksi.Load(FormPerpustakaan.dataKoleksi.GSDirGambarBuku)
         ComboBoxInputJenisKoleksi.DataSource = jenisKoleksi
+
+        If Not String.IsNullOrEmpty(FormPerpustakaan.dataKoleksi.GSDirGambarBuku) Then
+            PictureBoxGambarKoleksi.Load(FormPerpustakaan.dataKoleksi.GSDirGambarBuku)
+        End If
 
         PictureBoxGambarKoleksi.SizeMode = PictureBoxSizeMode.StretchImage
         DateTimePickerInputTanggalMasukKoleksi.Format = DateTimePickerFormat.Custom
