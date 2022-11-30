@@ -24,9 +24,9 @@
         DateTimePickerInputTanggalMasukKoleksi.Value = FormPerpustakaan.dataKoleksi.GSTanggalMasukKoleksi
         TextBoxInputStock.Text = FormPerpustakaan.dataKoleksi.GSStock
 
-        If String.Compare(FormPerpustakaan.dataKoleksi.GSBahasa, "Indonesia") = 0 Then
+        If String.Compare(FormPerpustakaan.dataKoleksi.GSBahasa, "Bahasa Indonesia") = 0 Then
             RadioButtonBahasaIndonesia.Checked = True
-        ElseIf String.Compare(FormPerpustakaan.dataKoleksi.GSBahasa, "Inggris") = 0 Then
+        ElseIf String.Compare(FormPerpustakaan.dataKoleksi.GSBahasa, "Bahasa Inggris") = 0 Then
             RadioButtonBahasaInggris.Checked = True
         End If
 
