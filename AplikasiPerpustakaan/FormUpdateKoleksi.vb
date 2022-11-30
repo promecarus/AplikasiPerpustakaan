@@ -53,6 +53,63 @@
             FormPerpustakaan.dataKoleksi.GSDirGambarBuku = FormPerpustakaan.dataKoleksi.GSDirGambarBuku.Replace("\", "/")
         End If
     End Sub
+
+    Private Sub ButtonUpdateKoleksi_Click(sender As Object, e As EventArgs) Handles ButtonUpdateKoleksi.Click
+        FormPerpustakaan.dataKoleksi.GSNamaKoleksi = TextBoxInputNamaKoleksi.Text.ToString()
+        FormPerpustakaan.dataKoleksi.GSJenisKoleksi = ComboBoxInputJenisKoleksi.SelectedItem().ToString()
+        FormPerpustakaan.dataKoleksi.GSDeskripsiKoleksi = RichTextBoxInputDeskripsi.Text.ToString()
+        FormPerpustakaan.dataKoleksi.GSPenerbit = TextBoxInputPenerbit.Text.ToString()
+        FormPerpustakaan.dataKoleksi.GSTahunTerbit = Integer.Parse(TextBoxInputTahunTerbit.Text)
+
+
+        FormPerpustakaan.dataKoleksi.GSLokasi = TextBoxInputLokasiRak.Text.ToString()
+        FormPerpustakaan.dataKoleksi.GSTanggalMasukKoleksi = DateTimePickerInputTanggalMasukKoleksi.Value.ToString("yyyy/MM/dd")
+        FormPerpustakaan.dataKoleksi.GSStock = Integer.Parse(TextBoxInputStock.Text)
+
+        If RadioButtonBahasaIndonesia.Checked Then
+            FormPerpustakaan.dataKoleksi.GSBahasa = "Indonesia"
+        ElseIf RadioButtonBahasaInggris.Checked Then
+            FormPerpustakaan.dataKoleksi.GSBahasa = "Inggris"
+        End If
+
+        If CheckBoxSains.Checked Then
+            FormPerpustakaan.dataKoleksi.AddKategori("Sains")
+        End If
+
+        If CheckBoxSosial.Checked Then
+            FormPerpustakaan.dataKoleksi.AddKategori("Sosial")
+        End If
+
+        If CheckBoxTeknologi.Checked Then
+            FormPerpustakaan.dataKoleksi.AddKategori("Teknologi")
+        End If
+
+        If CheckBoxBudaya.Checked Then
+            FormPerpustakaan.dataKoleksi.AddKategori("Budaya")
+        End If
+
+        'sus 63
+        FormPerpustakaan.dataKoleksi.AddKoleksi(TextBoxInputNamaKoleksi.Text.ToString())
+
+        Dim convertedKoleksi = FormPerpustakaan.dataKoleksi.ConvertKoleksiToString(FormPerpustakaan.dataKoleksi.getKategoriItem)
+
+        FormPerpustakaan.dataKoleksi.UpdateDataKoleksiByIDDatabase(FormPerpustakaan.selectedTableKoleksi,
+                                                                    FormPerpustakaan.dataKoleksi.GSDirGambarBuku,
+                                                                    FormPerpustakaan.dataKoleksi.GSNamaKoleksi,
+                                                                    FormPerpustakaan.dataKoleksi.GSJenisKoleksi,
+                                                                    FormPerpustakaan.dataKoleksi.GSPenerbit,
+                                                                    FormPerpustakaan.dataKoleksi.GSDeskripsiKoleksi,
+                                                                    FormPerpustakaan.dataKoleksi.GSTahunTerbit,
+                                                                    FormPerpustakaan.dataKoleksi.GSLokasi,
+                                                                    FormPerpustakaan.dataKoleksi.GSTanggalMasukKoleksi,
+                                                                    FormPerpustakaan.dataKoleksi.GSStock,
+                                                                    FormPerpustakaan.dataKoleksi.GSBahasa,
+                                                                    convertedKoleksi)
+        Dim infoTambah = New FormInfoTambahKoleksi()
+        infoTambah.Show()
+        Me.Close()
+    End Sub
+
     Private Sub FormUpdateKoleksi_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         FormPerpustakaan.Show()
     End Sub
