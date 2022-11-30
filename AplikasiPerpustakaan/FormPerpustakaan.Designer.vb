@@ -30,7 +30,7 @@ Partial Class FormPerpustakaan
         Me.ToolStripButtonPlus = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButtonMinus = New System.Windows.Forms.ToolStripButton()
         Me.ListBoxKoleksi = New System.Windows.Forms.ListBox()
-        Me.DataGridViewKoleksi = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewK = New System.Windows.Forms.DataGridView()
         Me.ColumnDirGambar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ColumnNamaKoleksi = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnJenisKoleksi = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,8 +43,11 @@ Partial Class FormPerpustakaan
         Me.ColumnBahasa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnKategori = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ButtonShow = New System.Windows.Forms.Button()
+        Me.DataGridViewKoleksi = New System.Windows.Forms.DataGridView()
+        Me.ButtonUpdate = New System.Windows.Forms.Button()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
+        CType(Me.DataGridViewK, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridViewKoleksi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -108,16 +111,17 @@ Partial Class FormPerpustakaan
         Me.ListBoxKoleksi.Size = New System.Drawing.Size(554, 144)
         Me.ListBoxKoleksi.TabIndex = 3
         '
-        'DataGridViewKoleksi
+        'DataGridViewK
         '
-        Me.DataGridViewKoleksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewKoleksi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnDirGambar, Me.ColumnNamaKoleksi, Me.ColumnJenisKoleksi, Me.ColumnPenerbit, Me.ColumnDeskripsi, Me.ColumnTahunTerbit, Me.ColumnLokasiRak, Me.ColumnTanggalMasuk, Me.ColumnStock, Me.ColumnBahasa, Me.ColumnKategori})
-        Me.DataGridViewKoleksi.Location = New System.Drawing.Point(12, 208)
-        Me.DataGridViewKoleksi.Name = "DataGridViewKoleksi"
-        Me.DataGridViewKoleksi.RowHeadersWidth = 51
-        Me.DataGridViewKoleksi.RowTemplate.Height = 29
-        Me.DataGridViewKoleksi.Size = New System.Drawing.Size(554, 384)
-        Me.DataGridViewKoleksi.TabIndex = 4
+        Me.DataGridViewK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewK.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnDirGambar, Me.ColumnNamaKoleksi, Me.ColumnJenisKoleksi, Me.ColumnPenerbit, Me.ColumnDeskripsi, Me.ColumnTahunTerbit, Me.ColumnLokasiRak, Me.ColumnTanggalMasuk, Me.ColumnStock, Me.ColumnBahasa, Me.ColumnKategori})
+        Me.DataGridViewK.Location = New System.Drawing.Point(12, 208)
+        Me.DataGridViewK.Name = "DataGridViewK"
+        Me.DataGridViewK.RowHeadersWidth = 51
+        Me.DataGridViewK.RowTemplate.Height = 29
+        Me.DataGridViewK.Size = New System.Drawing.Size(554, 384)
+        Me.DataGridViewK.TabIndex = 4
+        Me.DataGridViewK.Visible = False
         '
         'ColumnDirGambar
         '
@@ -208,13 +212,33 @@ Partial Class FormPerpustakaan
         Me.ButtonShow.Text = "Show"
         Me.ButtonShow.UseVisualStyleBackColor = True
         '
+        'DataGridViewKoleksi
+        '
+        Me.DataGridViewKoleksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewKoleksi.Location = New System.Drawing.Point(12, 208)
+        Me.DataGridViewKoleksi.Name = "DataGridViewKoleksi"
+        Me.DataGridViewKoleksi.RowHeadersWidth = 51
+        Me.DataGridViewKoleksi.Size = New System.Drawing.Size(554, 384)
+        Me.DataGridViewKoleksi.TabIndex = 6
+        '
+        'ButtonUpdate
+        '
+        Me.ButtonUpdate.Location = New System.Drawing.Point(373, 603)
+        Me.ButtonUpdate.Name = "ButtonUpdate"
+        Me.ButtonUpdate.Size = New System.Drawing.Size(94, 29)
+        Me.ButtonUpdate.TabIndex = 7
+        Me.ButtonUpdate.Text = "Update"
+        Me.ButtonUpdate.UseVisualStyleBackColor = True
+        '
         'FormPerpustakaan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(578, 643)
-        Me.Controls.Add(Me.ButtonShow)
+        Me.Controls.Add(Me.ButtonUpdate)
         Me.Controls.Add(Me.DataGridViewKoleksi)
+        Me.Controls.Add(Me.ButtonShow)
+        Me.Controls.Add(Me.DataGridViewK)
         Me.Controls.Add(Me.ListBoxKoleksi)
         Me.Controls.Add(Me.ToolStrip)
         Me.Controls.Add(Me.MenuStrip)
@@ -226,6 +250,7 @@ Partial Class FormPerpustakaan
         Me.MenuStrip.PerformLayout()
         Me.ToolStrip.ResumeLayout(False)
         Me.ToolStrip.PerformLayout()
+        CType(Me.DataGridViewK, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridViewKoleksi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -239,7 +264,7 @@ Partial Class FormPerpustakaan
     Friend WithEvents ToolStripButtonPlus As ToolStripButton
     Friend WithEvents ToolStripButtonMinus As ToolStripButton
     Friend WithEvents ListBoxKoleksi As ListBox
-    Friend WithEvents DataGridViewKoleksi As DataGridView
+    Friend WithEvents DataGridViewK As DataGridView
     Friend WithEvents ColumnDirGambar As DataGridViewImageColumn
     Friend WithEvents ColumnNamaKoleksi As DataGridViewTextBoxColumn
     Friend WithEvents ColumnJenisKoleksi As DataGridViewTextBoxColumn
@@ -252,4 +277,6 @@ Partial Class FormPerpustakaan
     Friend WithEvents ColumnBahasa As DataGridViewTextBoxColumn
     Friend WithEvents ColumnKategori As DataGridViewTextBoxColumn
     Friend WithEvents ButtonShow As Button
+    Friend WithEvents DataGridViewKoleksi As DataGridView
+    Friend WithEvents ButtonUpdate As Button
 End Class
