@@ -37,6 +37,22 @@
 
         FormPerpustakaan.dataKoleksi.ResetKategori()
     End Sub
+
+    Private Sub ButtonUpdateGambar_Click(sender As Object, e As EventArgs) Handles ButtonUpdateGambar.Click
+        OpenFileDialogGambarKoleksi.Title = "Open Gambar Koleksi"
+        OpenFileDialogGambarKoleksi.Filter = "All Format|*.*|Image|*bmp|Image JPG|*.jpg|Image JPEG|*.jpeg|Image PNG|*.png|Image GIF|*.gif"
+        OpenFileDialogGambarKoleksi.ShowDialog()
+
+
+        If OpenFileDialogGambarKoleksi.FileName.ToString IsNot "OpenFileDialog1" Then
+            Dim picKoleksiDir As String = OpenFileDialogGambarKoleksi.FileName
+            PictureBoxGambarKoleksi.Load(picKoleksiDir)
+            PictureBoxGambarKoleksi.SizeMode = PictureBoxSizeMode.StretchImage
+
+            FormPerpustakaan.dataKoleksi.GSDirGambarBuku = picKoleksiDir.ToString()
+            FormPerpustakaan.dataKoleksi.GSDirGambarBuku = FormPerpustakaan.dataKoleksi.GSDirGambarBuku.Replace("\", "/")
+        End If
+    End Sub
     Private Sub FormUpdateKoleksi_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         FormPerpustakaan.Show()
     End Sub
