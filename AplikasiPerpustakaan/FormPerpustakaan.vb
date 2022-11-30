@@ -3,6 +3,8 @@
     Public Shared listDataKoleksi As List(Of String)
     Dim selectedTableKoleksi
     Dim selectedTableKoleksiNama
+    Public Shared selectedTableKoleksi
+    Public Shared selectedTableKoleksiNama
 
     Public Sub New()
         ' This call is required by the designer.
