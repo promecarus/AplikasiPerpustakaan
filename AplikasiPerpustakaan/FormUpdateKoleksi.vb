@@ -1,10 +1,14 @@
 ﻿Public Class FormUpdateKoleksi
+    Dim jenisKoleksi As New List(Of String) From {"Buku", "Ensiklopedia", "Koran", "Majalah", "Publikasi", "Penelitian"}
+
     Public Sub New()
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
         PictureBoxGambarKoleksi.Load(FormPerpustakaan.dataKoleksi.GSDirGambarBuku)
+        ComboBoxInputJenisKoleksi.DataSource = jenisKoleksi
+
         PictureBoxGambarKoleksi.SizeMode = PictureBoxSizeMode.StretchImage
         DateTimePickerInputTanggalMasukKoleksi.Format = DateTimePickerFormat.Custom
         DateTimePickerInputTanggalMasukKoleksi.CustomFormat = "yyyy/MM/dd"
