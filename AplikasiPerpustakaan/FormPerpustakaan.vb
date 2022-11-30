@@ -83,7 +83,6 @@
     End Sub
 
     Private Sub ButtonShow_Click(sender As Object, e As EventArgs) Handles ButtonShow.Click
-        MessageBox.Show(selectedTableKoleksi)
         Dim dataSelected = dataKoleksi.getKoleksiDataTable.Item(selectedTableKoleksi)
 
         dataKoleksi.GSDirGambarBuku = dataSelected(0)
