@@ -1,8 +1,6 @@
 ﻿Public Class FormPerpustakaan
     Public Shared dataKoleksi As ClassKoleksi
     Public Shared listDataKoleksi As List(Of String)
-    Dim selectedTableKoleksi
-    Dim selectedTableKoleksiNama
     Public Shared selectedTableKoleksi
     Public Shared selectedTableKoleksiNama
 
