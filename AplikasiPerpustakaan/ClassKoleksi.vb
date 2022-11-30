@@ -1,4 +1,5 @@
 ﻿Imports System.Text
+Imports MySql.Data.MySqlClient
 
 Public Class ClassKoleksi
     Private namaKoleksi As String
@@ -15,6 +16,16 @@ Public Class ClassKoleksi
     Private listKoleksi As New List(Of String)
 
     Private koleksiDataTable As New ArrayList()
+
+    Public Shared dbConn As New MySqlConnection
+    Public Shared sqlCommand As New MySqlCommand
+    Public Shared sqlRead As MySqlDataReader
+    Public Shared sqlQuery As String
+
+    Private server As String = "localhost"
+    Private username As String = "root"
+    Private password As String = ""
+    Private database As String = "db_perpustakaan"
 
     Public Function ConvertKoleksiToString(vals As List(Of String))
         Dim builder As StringBuilder = New StringBuilder()
