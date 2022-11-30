@@ -80,10 +80,12 @@ Public Class ClassKoleksi
     End Property
 
     Public Property GSDirGambarBuku()
+    Public Property GSDirGambarBuku() As String
         Get
             Return dirGambarBuku
         End Get
         Set(ByVal value)
+        Set(ByVal value As String)
             dirGambarBuku = value
         End Set
     End Property
