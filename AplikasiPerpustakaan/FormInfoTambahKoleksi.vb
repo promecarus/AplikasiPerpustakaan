@@ -38,7 +38,7 @@
             ListBoxInfoKategori.Items.Add(kategori)
         Next
 
-        FormPerpustakaan.dataKoleksi.GSKategori.Clear()
+        FormPerpustakaan.dataKoleksi.getKategoriItem.Clear()
     End Sub
 
     Private Sub ButtonTutup_Click(sender As Object, e As EventArgs) Handles ButtonTutup.Click
