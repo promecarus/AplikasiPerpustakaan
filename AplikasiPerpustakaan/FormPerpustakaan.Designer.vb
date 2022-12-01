@@ -45,6 +45,7 @@ Partial Class FormPerpustakaan
         Me.ButtonShow = New System.Windows.Forms.Button()
         Me.DataGridViewKoleksi = New System.Windows.Forms.DataGridView()
         Me.ButtonUpdate = New System.Windows.Forms.Button()
+        Me.ButtonRemove = New System.Windows.Forms.Button()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         CType(Me.DataGridViewK, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -205,7 +206,7 @@ Partial Class FormPerpustakaan
         '
         'ButtonShow
         '
-        Me.ButtonShow.Location = New System.Drawing.Point(473, 603)
+        Me.ButtonShow.Location = New System.Drawing.Point(373, 603)
         Me.ButtonShow.Name = "ButtonShow"
         Me.ButtonShow.Size = New System.Drawing.Size(94, 29)
         Me.ButtonShow.TabIndex = 5
@@ -223,18 +224,28 @@ Partial Class FormPerpustakaan
         '
         'ButtonUpdate
         '
-        Me.ButtonUpdate.Location = New System.Drawing.Point(373, 603)
+        Me.ButtonUpdate.Location = New System.Drawing.Point(273, 603)
         Me.ButtonUpdate.Name = "ButtonUpdate"
         Me.ButtonUpdate.Size = New System.Drawing.Size(94, 29)
         Me.ButtonUpdate.TabIndex = 7
         Me.ButtonUpdate.Text = "Update"
         Me.ButtonUpdate.UseVisualStyleBackColor = True
         '
+        'ButtonRemove
+        '
+        Me.ButtonRemove.Location = New System.Drawing.Point(473, 603)
+        Me.ButtonRemove.Name = "ButtonRemove"
+        Me.ButtonRemove.Size = New System.Drawing.Size(94, 29)
+        Me.ButtonRemove.TabIndex = 8
+        Me.ButtonRemove.Text = "Remove"
+        Me.ButtonRemove.UseVisualStyleBackColor = True
+        '
         'FormPerpustakaan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(578, 643)
+        Me.Controls.Add(Me.ButtonRemove)
         Me.Controls.Add(Me.ButtonUpdate)
         Me.Controls.Add(Me.DataGridViewKoleksi)
         Me.Controls.Add(Me.ButtonShow)
@@ -279,4 +290,5 @@ Partial Class FormPerpustakaan
     Friend WithEvents ButtonShow As Button
     Friend WithEvents DataGridViewKoleksi As DataGridView
     Friend WithEvents ButtonUpdate As Button
+    Friend WithEvents ButtonRemove As Button
 End Class
