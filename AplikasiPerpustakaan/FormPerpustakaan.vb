@@ -112,12 +112,11 @@
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
         Dim selectedKoleksi As List(Of String) = dataKoleksi.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
 
-        dataKoleksi.GSDirGambarBuku = selectedKoleksi(2)
-
         dataKoleksi.GSNamaKoleksi = selectedKoleksi(1)
-        dataKoleksi.GSJenisKoleksi = selectedKoleksi(5)
+        dataKoleksi.GSDirGambarBuku = selectedKoleksi(2)
         dataKoleksi.GSDeskripsiKoleksi = selectedKoleksi(3)
         dataKoleksi.GSPenerbit = selectedKoleksi(4)
+        dataKoleksi.GSJenisKoleksi = selectedKoleksi(5)
         dataKoleksi.GSTahunTerbit = selectedKoleksi(6)
         dataKoleksi.GSLokasi = selectedKoleksi(7)
         dataKoleksi.GSTanggalMasukKoleksi = selectedKoleksi(8)
