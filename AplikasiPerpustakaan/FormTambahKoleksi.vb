@@ -7,6 +7,9 @@
 
         ' Add any initialization after the InitializeComponent() call.
         ComboBoxInputJenisKoleksi.DataSource = jenisKoleksi
+
+        DateTimePickerInputTanggalMasukKoleksi.Format = DateTimePickerFormat.Custom
+        DateTimePickerInputTanggalMasukKoleksi.CustomFormat = "yyyy/MM/dd"
     End Sub
 
     Private Sub ButtonTambahGambar_Click(sender As Object, e As EventArgs) Handles ButtonTambahGambar.Click
