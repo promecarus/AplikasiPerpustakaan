@@ -219,4 +219,82 @@ Public Class ClassKoleksi
             Return listKoleksi
         End Get
     End Property
+
+    Public Function GetDataKoleksiDatabase() As DataTable
+        Dim result As New DataTable
+
+        dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
+        dbConn.Open()
+        sqlCommand.Connection = dbConn
+        sqlCommand.CommandText = "  SELECT 
+                                    id_koleksi AS 'ID',
+                                    nama_koleksi AS 'Nama Koleksi', 
+                                    jenis_koleksi AS 'Jenis Koleksi', 
+                                    penerbit AS 'Penerbit', 
+                                    tahun_terbit AS 'Tahun Terbit', 
+                                    tanggal_masuk_koleksi AS 'Tanggal Masuk', 
+                                    lokasi AS 'Lokasi Rak', 
+                                    stock AS 'Stock', 
+                                    bahasa AS 'Bahasa' 
+                                    FROM koleksi;"
+
+        sqlRead = sqlCommand.ExecuteReader
+
+        result.Load(sqlRead)
+        sqlRead.Close()
+        dbConn.Close()
+        Return result
+    End Function
+
+    Public Function AddDataKoleksiDatabase(dir_gambar As String,
+                                           nama_koleksi As String,
+                                           jenis_koleksi As String,
+                                           penerbit_koleksi As String,
+                                           deskripsi_koleksi As String,
+                                           tahun_terbit As String,
+                                           lokasi_rak As String,
+                                           tanggal_masuk As Date,
+                                           stock_koleksi As Integer,
+                                           bahasa_koleksi As String,
+                                           kategori_koleksi As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "INSERT INTO koleksi(
+                        nama_koleksi, 
+                        dir_gambar, 
+                        deskripsi, 
+                        penerbit, 
+                        jenis_koleksi, 
+                        tahun_terbit, 
+                        lokasi,
+                        tanggal_masuk_koleksi,
+                        stock,
+                        bahasa,
+                        kategori) VALUE('" _
+                        & nama_koleksi & "', '" _
+                        & dir_gambar & "', '" _
+                        & deskripsi_koleksi & "', '" _
+                        & penerbit_koleksi & "', '" _
+                        & jenis_koleksi & "', '" _
+                        & tahun_terbit & "', '" _
+                        & lokasi_rak & "', '" _
+                        & tanggal_masuk.ToString("yyyy/MM/dd") & "', '" _
+                        & stock_koleksi & "', '" _
+                        & bahasa_koleksi & "', '" _
+                        & kategori_koleksi & "')"
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+
+            dbConn.Close()
+
+            sqlRead.Close()
+            dbConn.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
 End Class
