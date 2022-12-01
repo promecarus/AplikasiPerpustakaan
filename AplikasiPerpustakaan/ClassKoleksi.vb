@@ -360,19 +360,19 @@ Public Class ClassKoleksi
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlCommand.CommandText = "  UPDATE koleksi SET " &
-                                        "nama_koleksi='" & nama_koleksi & "', " &
-                                        "dir_gambar='" & dir_gambar & "', " &
-                                        "deskripsi='" & deskripsi_koleksi & "', " &
-                                        "penerbit='" & penerbit_koleksi & "', " &
-                                        "jenis_koleksi='" & jenis_koleksi & "', " &
-                                        "tahun_terbit='" & tahun_terbit & "', " &
-                                        "lokasi='" & lokasi_rak & "', " &
-                                        "tanggal_masuk_koleksi='" & tanggal_masuk & "', " &
-                                        "stock='" & stock_koleksi & "', " &
-                                        "bahasa='" & bahasa_koleksi & "', " &
-                                        "kategori='" & kategori_koleksi & "' " &
-                                        "WHERE id_koleksi='" & ID & "'"
+            sqlQuery = " UPDATE koleksi SET " &
+                        "nama_koleksi='" & nama_koleksi & "', " &
+                        "dir_gambar='" & dir_gambar & "', " &
+                        "deskripsi='" & deskripsi_koleksi & "', " &
+                        "penerbit='" & penerbit_koleksi & "', " &
+                        "jenis_koleksi='" & jenis_koleksi & "', " &
+                        "tahun_terbit='" & tahun_terbit & "', " &
+                        "lokasi='" & lokasi_rak & "', " &
+                        "tanggal_masuk_koleksi='" & tanggal_masuk & "', " &
+                        "stock='" & stock_koleksi & "', " &
+                        "bahasa='" & bahasa_koleksi & "', " &
+                        "kategori='" & kategori_koleksi & "' " &
+                        "WHERE id_koleksi='" & ID & "'"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
