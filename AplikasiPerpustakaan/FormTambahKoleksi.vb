@@ -70,7 +70,19 @@
 
         'FormPerpustakaan.listDataKoleksi.Add(New KoleksiData(FormPerpustakaan.dataKoleksi.GSNamaKoleksi))
         Dim convertedKoleksi = FormPerpustakaan.dataKoleksi.ConvertKoleksiToString(FormPerpustakaan.dataKoleksi.getKategoriItem)
-        FormPerpustakaan.dataKoleksi.AddKoleksiDataTable(FormPerpustakaan.dataKoleksi.GSDirGambarBuku,
+        'FormPerpustakaan.dataKoleksi.AddKoleksiDataTable(FormPerpustakaan.dataKoleksi.GSDirGambarBuku,
+        '                                                 FormPerpustakaan.dataKoleksi.GSNamaKoleksi,
+        '                                                 FormPerpustakaan.dataKoleksi.GSJenisKoleksi,
+        '                                                 FormPerpustakaan.dataKoleksi.GSPenerbit,
+        '                                                 FormPerpustakaan.dataKoleksi.GSDeskripsiKoleksi,
+        '                                                 FormPerpustakaan.dataKoleksi.GSTahunTerbit,
+        '                                                 FormPerpustakaan.dataKoleksi.GSLokasi,
+        '                                                 FormPerpustakaan.dataKoleksi.GSTanggalMasukKoleksi,
+        '                                                 FormPerpustakaan.dataKoleksi.GSStock,
+        '                                                 FormPerpustakaan.dataKoleksi.GSBahasa,
+        '                                                 convertedKoleksi)
+
+        FormPerpustakaan.dataKoleksi.AddDataKoleksiDatabase(FormPerpustakaan.dataKoleksi.GSDirGambarBuku,
                                                          FormPerpustakaan.dataKoleksi.GSNamaKoleksi,
                                                          FormPerpustakaan.dataKoleksi.GSJenisKoleksi,
                                                          FormPerpustakaan.dataKoleksi.GSPenerbit,
@@ -82,9 +94,8 @@
                                                          FormPerpustakaan.dataKoleksi.GSBahasa,
                                                          convertedKoleksi)
 
-        FormPerpustakaan.ListBoxKoleksi.Items.Add(TextBoxInputNamaKoleksi.Text)
         Dim formInfoTambahKoleksi = New FormInfoTambahKoleksi()
-        Me.Hide()
+        Me.Close()
         formInfoTambahKoleksi.Show()
     End Sub
 
