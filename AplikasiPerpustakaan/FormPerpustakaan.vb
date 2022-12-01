@@ -85,17 +85,17 @@
     Private Sub ButtonShow_Click(sender As Object, e As EventArgs) Handles ButtonShow.Click
         Dim dataSelected = dataKoleksi.getKoleksiDataTable.Item(selectedTableKoleksi)
 
-        dataKoleksi.GSDirGambarBuku = dataSelected(0)
         dataKoleksi.GSNamaKoleksi = dataSelected(1)
-        dataKoleksi.GSJenisKoleksi = dataSelected(2)
-        dataKoleksi.GSPenerbit = dataSelected(3)
-        dataKoleksi.GSDeskripsiKoleksi = dataSelected(4)
-        dataKoleksi.GSTahunTerbit = dataSelected(5)
-        dataKoleksi.GSLokasi = dataSelected(6)
-        dataKoleksi.GSTanggalMasukKoleksi = dataSelected(7)
-        dataKoleksi.GSStock = dataSelected(8)
-        dataKoleksi.GSBahasa = dataSelected(9)
-        Dim data_koleksi As List(Of String) = dataKoleksi.ConvertStringToKoleksi(dataSelected(10))
+        dataKoleksi.GSDirGambarBuku = dataSelected(2)
+        dataKoleksi.GSDeskripsiKoleksi = dataSelected(3)
+        dataKoleksi.GSPenerbit = dataSelected(4)
+        dataKoleksi.GSJenisKoleksi = dataSelected(5)
+        dataKoleksi.GSTahunTerbit = dataSelected(6)
+        dataKoleksi.GSLokasi = dataSelected(7)
+        dataKoleksi.GSTanggalMasukKoleksi = dataSelected(8)
+        dataKoleksi.GSStock = dataSelected(9)
+        dataKoleksi.GSBahasa = dataSelected(10)
+        Dim data_koleksi As List(Of String) = dataKoleksi.ConvertStringToKoleksi(dataSelected(11))
 
         For Each info_tambah In data_koleksi
             dataKoleksi.AddKategori(info_tambah)
