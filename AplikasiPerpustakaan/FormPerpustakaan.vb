@@ -132,4 +132,10 @@
         formUpdate.Show()
         Me.Hide()
     End Sub
+
+    Private Sub ButtonRemove_Click(sender As Object, e As EventArgs) Handles ButtonRemove.Click
+        Me.Hide()
+        Dim formHapusKoleksi = New FormHapusKoleksi()
+        formHapusKoleksi.Show()
+    End Sub
 End Class
