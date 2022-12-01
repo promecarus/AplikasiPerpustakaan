@@ -18,7 +18,6 @@
         OpenFileDialogGambarKoleksi.ShowDialog()
 
         If OpenFileDialogGambarKoleksi.FileName.ToString IsNot "OpenFileDialog1" Then
-            PictureBoxGambarKoleksi.Load(OpenFileDialogGambarKoleksi.FileName)
             Dim picKoleksiDir As String = OpenFileDialogGambarKoleksi.FileName
             PictureBoxGambarKoleksi.Load(picKoleksiDir)
             PictureBoxGambarKoleksi.SizeMode = PictureBoxSizeMode.StretchImage
