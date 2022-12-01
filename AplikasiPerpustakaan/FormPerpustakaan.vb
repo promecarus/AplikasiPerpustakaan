@@ -125,7 +125,7 @@
         Dim data_kategori As List(Of String) = dataKoleksi.ConvertStringToKoleksi(selectedKoleksi(11))
 
         For Each info_kategori In data_kategori
-            dataKoleksi.AddKoleksi(info_kategori)
+            dataKoleksi.AddKategori(info_kategori)
         Next
 
         Dim formUpdate = New FormUpdateKoleksi()
