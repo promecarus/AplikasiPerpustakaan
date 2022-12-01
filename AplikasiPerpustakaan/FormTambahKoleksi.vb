@@ -28,10 +28,6 @@
     End Sub
 
     Private Sub ButtonTambahKoleksi_Click(sender As Object, e As EventArgs) Handles ButtonTambahKoleksi.Click
-        If OpenFileDialogGambarKoleksi.FileName.ToString IsNot "OpenFileDialog1" Then
-            FormPerpustakaan.dataKoleksi.GSDirGambarBuku = OpenFileDialogGambarKoleksi.FileName
-        End If
-
         FormPerpustakaan.dataKoleksi.GSNamaKoleksi = TextBoxInputNamaKoleksi.Text
         FormPerpustakaan.dataKoleksi.GSJenisKoleksi = ComboBoxInputJenisKoleksi.SelectedItem
         FormPerpustakaan.dataKoleksi.GSDeskripsiKoleksi = RichTextBoxInputDeskripsi.Text
