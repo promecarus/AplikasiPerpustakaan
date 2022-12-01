@@ -74,9 +74,9 @@
         FormPerpustakaan.dataKoleksi.GSStock = Integer.Parse(TextBoxInputStock.Text)
 
         If RadioButtonBahasaIndonesia.Checked Then
-            FormPerpustakaan.dataKoleksi.GSBahasa = "Indonesia"
+            FormPerpustakaan.dataKoleksi.GSBahasa = "Bahasa Indonesia"
         ElseIf RadioButtonBahasaInggris.Checked Then
-            FormPerpustakaan.dataKoleksi.GSBahasa = "Inggris"
+            FormPerpustakaan.dataKoleksi.GSBahasa = "Bahasa Inggris"
         End If
 
         If CheckBoxSains.Checked Then
