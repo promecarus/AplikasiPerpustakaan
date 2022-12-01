@@ -23,6 +23,7 @@
             PictureBoxGambarKoleksi.Load(picKoleksiDir)
             PictureBoxGambarKoleksi.SizeMode = PictureBoxSizeMode.StretchImage
 
+            FormPerpustakaan.dataKoleksi.GSDirGambarBuku = picKoleksiDir.ToString()
             FormPerpustakaan.dataKoleksi.GSDirGambarBuku = FormPerpustakaan.dataKoleksi.GSDirGambarBuku.Replace("\", "/")
         End If
     End Sub
