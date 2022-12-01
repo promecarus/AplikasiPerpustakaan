@@ -112,8 +112,7 @@
                                                                     FormPerpustakaan.dataKoleksi.GSStock,
                                                                     FormPerpustakaan.dataKoleksi.GSBahasa,
                                                                     convertedKoleksi)
-        Dim infoTambah = New FormInfoTambahKoleksi()
-        infoTambah.Show()
+        FormPerpustakaan.Show()
         Me.Close()
     End Sub
 
