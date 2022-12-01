@@ -368,7 +368,7 @@ Public Class ClassKoleksi
                         "jenis_koleksi='" & jenis_koleksi & "', " &
                         "tahun_terbit='" & tahun_terbit & "', " &
                         "lokasi='" & lokasi_rak & "', " &
-                        "tanggal_masuk_koleksi='" & tanggal_masuk & "', " &
+                        "tanggal_masuk_koleksi='" & Convert.ToDateTime(tanggal_masuk).ToString("yyyy/MM/dd") & "', " &
                         "stock='" & stock_koleksi & "', " &
                         "bahasa='" & bahasa_koleksi & "', " &
                         "kategori='" & kategori_koleksi & "' " &
