@@ -68,6 +68,8 @@
             FormPerpustakaan.listDataKoleksi.Add(FormPerpustakaan.dataKoleksi.GSNamaKoleksi)
         End If
 
+        FormPerpustakaan.ListBoxKoleksi.Items.Add(TextBoxInputNamaKoleksi.Text)
+
         'FormPerpustakaan.listDataKoleksi.Add(New KoleksiData(FormPerpustakaan.dataKoleksi.GSNamaKoleksi))
         Dim convertedKoleksi = FormPerpustakaan.dataKoleksi.ConvertKoleksiToString(FormPerpustakaan.dataKoleksi.getKategoriItem)
         'FormPerpustakaan.dataKoleksi.AddKoleksiDataTable(FormPerpustakaan.dataKoleksi.GSDirGambarBuku,
