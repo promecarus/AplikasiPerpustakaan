@@ -12,7 +12,8 @@ Public Class ClassKoleksi
     Private tanggalMasukKoleksi As Date
     Private stock As Integer
     Private bahasa As String
-    Private kategori As New List(Of String)
+    Private kategori As String
+    Private listKategori As New List(Of String)
     Private listKoleksi As New List(Of String)
 
     Private koleksiDataTable As New ArrayList()
@@ -171,28 +172,28 @@ Public Class ClassKoleksi
         End Set
     End Property
 
-    Public Property GSKategori()
+    Public Property GSKategori() As String
         Get
             Return kategori
         End Get
-        Set(ByVal value)
+        Set(ByVal value As String)
             kategori = value
         End Set
     End Property
 
     'kategori
     Public Function AddKategori(value As String)
-        kategori.Add(value)
+        listKategori.Add(value)
     End Function
 
     Public ReadOnly Property getKategoriItem() As List(Of String)
         Get
-            Return kategori
+            Return listKategori
         End Get
     End Property
 
     Public Function ResetKategori()
-        kategori.Clear()
+        listKategori.Clear()
     End Function
 
     Public Property GSListKoleksi()
