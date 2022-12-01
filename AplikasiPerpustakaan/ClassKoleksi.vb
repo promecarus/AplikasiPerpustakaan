@@ -292,7 +292,7 @@ Public Class ClassKoleksi
             sqlRead.Close()
             dbConn.Close()
         Catch ex As Exception
-            Return ex.Message
+            MsgBox("Error: " & ex.Message)
         Finally
             dbConn.Dispose()
         End Try
@@ -381,7 +381,7 @@ Public Class ClassKoleksi
             sqlRead.Close()
             dbConn.Close()
         Catch ex As Exception
-            Return ex.Message
+            MsgBox("Error: " & ex.Message)
         Finally
             dbConn.Dispose()
         End Try
