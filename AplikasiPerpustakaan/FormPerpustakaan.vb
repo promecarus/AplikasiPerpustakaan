@@ -83,7 +83,7 @@
     End Sub
 
     Private Sub ButtonShow_Click(sender As Object, e As EventArgs) Handles ButtonShow.Click
-        Dim dataSelected = dataKoleksi.getKoleksiDataTable.Item(selectedTableKoleksi)
+        Dim dataSelected As List(Of String) = dataKoleksi.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
 
         dataKoleksi.GSNamaKoleksi = dataSelected(1)
         dataKoleksi.GSDirGambarBuku = dataSelected(2)
