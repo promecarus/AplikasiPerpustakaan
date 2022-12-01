@@ -52,16 +52,16 @@
         End If
 
         If CheckBoxSains.Checked() Then
-            FormPerpustakaan.dataKoleksi.GSKategori.Add(CheckBoxSains.Text)
+            FormPerpustakaan.dataKoleksi.getKategoriItem.Add(CheckBoxSains.Text)
         End If
         If CheckBoxSosial.Checked() Then
-            FormPerpustakaan.dataKoleksi.GSKategori.Add(CheckBoxSosial.Text)
+            FormPerpustakaan.dataKoleksi.getKategoriItem.Add(CheckBoxSosial.Text)
         End If
         If CheckBoxTeknologi.Checked() Then
-            FormPerpustakaan.dataKoleksi.GSKategori.Add(CheckBoxTeknologi.Text)
+            FormPerpustakaan.dataKoleksi.getKategoriItem.Add(CheckBoxTeknologi.Text)
         End If
         If CheckBoxBudaya.Checked() Then
-            FormPerpustakaan.dataKoleksi.GSKategori.Add(CheckBoxBudaya.Text)
+            FormPerpustakaan.dataKoleksi.getKategoriItem.Add(CheckBoxBudaya.Text)
         End If
 
         If String.IsNullOrEmpty(FormPerpustakaan.dataKoleksi.GSNamaKoleksi) Then
