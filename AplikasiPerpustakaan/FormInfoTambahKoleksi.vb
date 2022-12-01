@@ -34,7 +34,7 @@
 
         ListBoxInfoKategori.Items.Clear()
 
-        For Each kategori In FormPerpustakaan.dataKoleksi.GSKategori
+        For Each kategori In FormPerpustakaan.dataKoleksi.getKategoriItem
             ListBoxInfoKategori.Items.Add(kategori)
         Next
 
