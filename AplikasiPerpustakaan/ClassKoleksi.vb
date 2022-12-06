@@ -21,7 +21,7 @@ Public Class ClassKoleksi
     Public Shared dbConn As New MySqlConnection
     Public Shared sqlCommand As New MySqlCommand
     Public Shared sqlRead As MySqlDataReader
-    Public Shared sqlQuery As String
+    Private sqlQuery As String
 
     Private server As String = "localhost"
     Private username As String = "root"
