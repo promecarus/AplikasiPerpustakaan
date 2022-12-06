@@ -215,9 +215,12 @@ Partial Class FormPerpustakaan
         '
         'DataGridViewKoleksi
         '
+        Me.DataGridViewKoleksi.AllowUserToAddRows = False
+        Me.DataGridViewKoleksi.AllowUserToDeleteRows = False
         Me.DataGridViewKoleksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewKoleksi.Location = New System.Drawing.Point(12, 208)
         Me.DataGridViewKoleksi.Name = "DataGridViewKoleksi"
+        Me.DataGridViewKoleksi.ReadOnly = True
         Me.DataGridViewKoleksi.RowHeadersWidth = 51
         Me.DataGridViewKoleksi.Size = New System.Drawing.Size(554, 384)
         Me.DataGridViewKoleksi.TabIndex = 6
