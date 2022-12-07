@@ -78,6 +78,31 @@ Public Class ClassUsers
         Return s.ToString
     End Function
 
+    Public Function AddUsersDatabase(username_regist As String, password_regist As String)
+        Try
+            Dim today = Date.Now()
+
+            dbConn.ConnectionString = "server=" + server + ";" + "user id=" + username_db + ";" + "password=" + password_db + ";" + "database=" + database
+
+            dbConn.Open()
+
+            sqlCommand.Connection = dbConn
+            sqlQuery = "INSERT INTO USERS(username, password, registered_at) VALUE('" & username_regist & "', '" & EncryptMD5(password_regist) & "', '" & today.ToString("yyyy/MM/dd") & "')"
+
+            Debug.WriteLine(sqlQuery)
+
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+
+            sqlRead.Close()
+            dbConn.Close()
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
     Public Function CheckAuthDatabase(username_login As String, password_login As String) As List(Of String)
         Try
             Dim result As New List(Of String)
