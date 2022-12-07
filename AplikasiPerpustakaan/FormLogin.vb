@@ -1,5 +1,4 @@
 ﻿Public Class FormLogin
-    Public Shared Users As New ClassUsers
     Public Shared Perpustakaan As ClassPerpustakaan
     Public Shared Users As ClassUsers
 
