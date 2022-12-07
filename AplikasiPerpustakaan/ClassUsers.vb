@@ -4,12 +4,33 @@ Public Class ClassUsers
     Private TripleDes As New TripleDESCryptoServiceProvider
     Private user As ArrayList = New ArrayList()
 
+    Private username As String
+    Private password As String
+
     Public Sub New()
         user.Add({"admin", EncryptData("admin")})
         user.Add({"user", EncryptData("user")})
         user.Add({"1", EncryptData("1")})
         user.Add({"haikal", EncryptData("1")})
     End Sub
+
+    Public Property GSUsername() As String
+        Get
+            Return username
+        End Get
+        Set(ByVal value As String)
+            username = value
+        End Set
+    End Property
+
+    Public Property GSPassword() As String
+        Get
+            Return password
+        End Get
+        Set(ByVal value As String)
+            password = value
+        End Set
+    End Property
 
     Public Function EncryptData(plaintext As String) As String
         Dim plaintextBytes() As Byte = System.Text.Encoding.Unicode.GetBytes(plaintext)
