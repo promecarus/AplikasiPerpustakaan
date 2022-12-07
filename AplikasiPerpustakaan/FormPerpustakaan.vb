@@ -16,6 +16,7 @@
     Private Sub FormPerpustakaan_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         'UpdateTableDataArrayList()
         ReloadDataTableDatabase()
+        BiarGaBiru()
     End Sub
 
     Private Sub ReloadDataTableDatabase()
@@ -156,5 +157,9 @@
         Catch ex As Exception
             MessageBox.Show("Pilih row terlebih dahulu!")
         End Try
+    End Sub
+
+    Private Sub BiarGaBiru()
+        DataGridViewKoleksi.ClearSelection()
     End Sub
 End Class
