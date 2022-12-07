@@ -97,7 +97,7 @@ Public Class ClassUsers
             sqlRead.Close()
             dbConn.Close()
         Catch ex As Exception
-            Return ex.Message
+            MessageBox.Show("Username sudah ada, silahkan login!")
         Finally
             dbConn.Dispose()
         End Try
