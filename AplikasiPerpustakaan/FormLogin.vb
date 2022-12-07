@@ -1,5 +1,16 @@
 ﻿Public Class FormLogin
     Public Shared Users As New ClassUsers
+    Public Shared Perpustakaan As ClassPerpustakaan
+    Public Shared Users As ClassUsers
+
+    Public Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        Perpustakaan = New ClassPerpustakaan()
+        Users = New ClassUsers()
+    End Sub
 
     Private Sub ButtonLogin_Click(sender As Object, e As EventArgs) Handles ButtonLogin.Click
         Dim plainUsername As String = TextBoxUsername.Text
