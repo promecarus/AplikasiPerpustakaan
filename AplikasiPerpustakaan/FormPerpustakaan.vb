@@ -74,12 +74,16 @@
 
     Private Sub DataGridViewKoleksi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewKoleksi.CellClick
         'selectedTableKoleksi = DataGridViewKoleksi.CurrentRow.Index
-        Dim index As Integer = e.RowIndex
-        Dim selectedRow As DataGridViewRow
-        selectedRow = DataGridViewKoleksi.Rows(index)
+        Try
+            Dim index As Integer = e.RowIndex
+            Dim selectedRow As DataGridViewRow
+            selectedRow = DataGridViewKoleksi.Rows(index)
 
-        selectedTableKoleksi = selectedRow.Cells(0).Value
-        selectedTableKoleksiNama = selectedRow.Cells(1).Value
+            selectedTableKoleksi = selectedRow.Cells(0).Value
+            selectedTableKoleksiNama = selectedRow.Cells(1).Value
+        Catch ex As Exception
+            MessageBox.Show("Fitur sorting belum tersedia!")
+        End Try
     End Sub
 
     Private Sub ButtonShow_Click(sender As Object, e As EventArgs) Handles ButtonShow.Click
