@@ -83,26 +83,30 @@
     End Sub
 
     Private Sub ButtonShow_Click(sender As Object, e As EventArgs) Handles ButtonShow.Click
-        Dim dataSelected As List(Of String) = dataKoleksi.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
+        Try
+            Dim dataSelected As List(Of String) = dataKoleksi.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
 
-        dataKoleksi.GSNamaKoleksi = dataSelected(1)
-        dataKoleksi.GSDirGambarBuku = dataSelected(2)
-        dataKoleksi.GSDeskripsiKoleksi = dataSelected(3)
-        dataKoleksi.GSPenerbit = dataSelected(4)
-        dataKoleksi.GSJenisKoleksi = dataSelected(5)
-        dataKoleksi.GSTahunTerbit = dataSelected(6)
-        dataKoleksi.GSLokasi = dataSelected(7)
-        dataKoleksi.GSTanggalMasukKoleksi = dataSelected(8)
-        dataKoleksi.GSStock = dataSelected(9)
-        dataKoleksi.GSBahasa = dataSelected(10)
-        Dim data_koleksi As List(Of String) = dataKoleksi.ConvertStringToKoleksi(dataSelected(11))
+            dataKoleksi.GSNamaKoleksi = dataSelected(1)
+            dataKoleksi.GSDirGambarBuku = dataSelected(2)
+            dataKoleksi.GSDeskripsiKoleksi = dataSelected(3)
+            dataKoleksi.GSPenerbit = dataSelected(4)
+            dataKoleksi.GSJenisKoleksi = dataSelected(5)
+            dataKoleksi.GSTahunTerbit = dataSelected(6)
+            dataKoleksi.GSLokasi = dataSelected(7)
+            dataKoleksi.GSTanggalMasukKoleksi = dataSelected(8)
+            dataKoleksi.GSStock = dataSelected(9)
+            dataKoleksi.GSBahasa = dataSelected(10)
+            Dim data_koleksi As List(Of String) = dataKoleksi.ConvertStringToKoleksi(dataSelected(11))
 
-        For Each info_tambah In data_koleksi
-            dataKoleksi.AddKategori(info_tambah)
-        Next
+            For Each info_tambah In data_koleksi
+                dataKoleksi.AddKategori(info_tambah)
+            Next
 
-        Dim infoTambah = New FormInfoTambahKoleksi()
-        infoTambah.Show()
+            Dim infoTambah = New FormInfoTambahKoleksi()
+            infoTambah.Show()
+        Catch ex As Exception
+            MessageBox.Show("Pilih row terlebih dahulu!")
+        End Try
     End Sub
 
     Private Sub FormPerpustakaan_Closed(sender As Object, e As EventArgs) Handles Me.Closed
@@ -110,32 +114,43 @@
     End Sub
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
-        Dim selectedKoleksi As List(Of String) = dataKoleksi.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
+        Try
+            Dim selectedKoleksi As List(Of String) = dataKoleksi.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
 
-        dataKoleksi.GSNamaKoleksi = selectedKoleksi(1)
-        dataKoleksi.GSDirGambarBuku = selectedKoleksi(2)
-        dataKoleksi.GSDeskripsiKoleksi = selectedKoleksi(3)
-        dataKoleksi.GSPenerbit = selectedKoleksi(4)
-        dataKoleksi.GSJenisKoleksi = selectedKoleksi(5)
-        dataKoleksi.GSTahunTerbit = selectedKoleksi(6)
-        dataKoleksi.GSLokasi = selectedKoleksi(7)
-        dataKoleksi.GSTanggalMasukKoleksi = selectedKoleksi(8)
-        dataKoleksi.GSStock = selectedKoleksi(9)
-        dataKoleksi.GSBahasa = selectedKoleksi(10)
-        Dim data_kategori As List(Of String) = dataKoleksi.ConvertStringToKoleksi(selectedKoleksi(11))
+            dataKoleksi.GSNamaKoleksi = selectedKoleksi(1)
+            dataKoleksi.GSDirGambarBuku = selectedKoleksi(2)
+            dataKoleksi.GSDeskripsiKoleksi = selectedKoleksi(3)
+            dataKoleksi.GSPenerbit = selectedKoleksi(4)
+            dataKoleksi.GSJenisKoleksi = selectedKoleksi(5)
+            dataKoleksi.GSTahunTerbit = selectedKoleksi(6)
+            dataKoleksi.GSLokasi = selectedKoleksi(7)
+            dataKoleksi.GSTanggalMasukKoleksi = selectedKoleksi(8)
+            dataKoleksi.GSStock = selectedKoleksi(9)
+            dataKoleksi.GSBahasa = selectedKoleksi(10)
+            Dim data_kategori As List(Of String) = dataKoleksi.ConvertStringToKoleksi(selectedKoleksi(11))
 
-        For Each info_kategori In data_kategori
-            dataKoleksi.AddKategori(info_kategori)
-        Next
+            For Each info_kategori In data_kategori
+                dataKoleksi.AddKategori(info_kategori)
+            Next
 
-        Dim formUpdate = New FormUpdateKoleksi()
-        formUpdate.Show()
-        Me.Hide()
+            Dim formUpdate = New FormUpdateKoleksi()
+            formUpdate.Show()
+            Me.Hide()
+        Catch ex As Exception
+            MessageBox.Show("Pilih row terlebih dahulu!")
+        End Try
     End Sub
 
     Private Sub ButtonRemove_Click(sender As Object, e As EventArgs) Handles ButtonRemove.Click
-        Me.Hide()
-        Dim formHapusKoleksi = New FormHapusKoleksi()
-        formHapusKoleksi.Show()
+        Try
+            Dim selectedKoleksi As List(Of String) = dataKoleksi.GetDataKoleksiByIDDatabase(selectedTableKoleksi)
+            dataKoleksi.GSNamaKoleksi = selectedKoleksi(1)
+
+            Me.Hide()
+            Dim formHapusKoleksi = New FormHapusKoleksi()
+            formHapusKoleksi.Show()
+        Catch ex As Exception
+            MessageBox.Show("Pilih row terlebih dahulu!")
+        End Try
     End Sub
 End Class
